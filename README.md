@@ -56,6 +56,16 @@ php bin/export-preview.php
 
 Das Skript erzeugt `export/workshop-vorschau.zip`, etwa 400 KB. Entpacken und `index.html` doppelklicken. Das Formular ist in der Vorschau ausgeschaltet. Nach jeder Änderung einfach neu erzeugen.
 
+**Online-Vorschau:** https://grau-zone.github.io/pdw/ (GitHub Pages, Branch `gh-pages`)
+- Nur statisch, das Formular ist aus. Die Seite liegt auf US-Servern, enthält aber keine Daten, nur Entwurfsinhalte.
+- Aktualisieren: Vorschau mit Adresse erzeugen, dann den Inhalt von `export/vorschau/` als neuen Commit auf `gh-pages` pushen.
+
+  ```bash
+  php bin/export-preview.php https://grau-zone.github.io/pdw/
+  ```
+
+- Die echte Seite mit Formular kommt auf Schweizer PHP-Hosting, siehe Deployment.
+
 ## Aufbau
 
 ```

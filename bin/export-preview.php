@@ -6,7 +6,8 @@ declare(strict_types=1);
  * Static preview for people without PHP (e.g. to send to Leon for feedback):
  * renders the public pages to plain HTML that opens with a double-click.
  * The form does nothing in the preview.
- *   php bin/export-preview.php   ->  export/workshop-vorschau.zip
+ *   php bin/export-preview.php                                    ->  export/workshop-vorschau.zip
+ *   php bin/export-preview.php https://grau-zone.github.io/pdw/   (address where the preview is published)
  */
 
 use Workshop\App;
@@ -15,6 +16,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $app = App::boot();
 $root = $app->root;
+$publicUrl = $argv[1] ?? null;
 $out = $root . '/export/vorschau';
 $zipFile = $root . '/export/workshop-vorschau.zip';
 
@@ -49,6 +51,11 @@ foreach ($pages as $file => [$template, $vars]) {
 
         return $m[1] . '="' . $target . '"';
     }, $html);
+
+    // Link previews (og:url) should point to where the preview is published, not to localhost.
+    if ($publicUrl !== null) {
+        $html = str_replace(e($app->absoluteUrl('/')), e($publicUrl), $html);
+    }
 
     // The preview cannot submit anything – say so and disable the button.
     $html = str_replace(
