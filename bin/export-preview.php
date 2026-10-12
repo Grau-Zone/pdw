@@ -59,10 +59,12 @@ foreach ($pages as $file => [$template, $vars]) {
 
     // The preview cannot submit anything – say so and disable the button.
     $html = str_replace(
-        ['Draft · content not final · please do not submit real papers yet', 'type="submit"><span data-label>Submit paper</span>'],
-        ['Preview · draft content · the form does not work in this preview', 'type="button" disabled><span data-label>Submit paper</span>'],
+        'Draft · content not final · please do not submit real papers yet',
+        'Preview · draft content · the form does not work in this preview',
         $html
     );
+    // Robust against extra attributes on the button (e.g. data-magnetic for the effects).
+    $html = (string) preg_replace('/type="submit"([^>]*)><span data-label>/', 'type="button" disabled$1><span data-label>', $html);
     file_put_contents("$out/$file", $html);
 }
 
