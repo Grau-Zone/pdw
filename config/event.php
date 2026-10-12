@@ -42,12 +42,12 @@ return [
         // Master switch. On the live site the form additionally needs privacy.approved = true.
         'enabled' => true,
         'opens_at' => null,                                     // optional, e.g. '2026-10-14 12:00'
-        'deadline' => '2026-10-30 23:59',                       // TBA – shown as "23:59 Zurich time (CET, UTC+01:00)"
+        'deadline' => '2026-11-04 23:59',                       // Leon's proposal (avoids the ECIS deadline on 30 Oct) – shown as "23:59 Zurich time (CET, UTC+01:00)"
         // false shows "Provisional" next to the deadline. Set to true once the organisers confirmed it.
         'deadline_confirmed' => false,
         // Uploads within this many minutes after the deadline are still accepted (not shown on the site).
         'grace_minutes' => 5,
-        'notification_date' => '2026-11-03',                    // TBA
+        'notification_date' => '2026-11-06',                    // TBA – must be after the deadline
         'max_file_mb' => 10,
         'what_to_submit' => [                                   // TBA – format, page limit, template, anonymised?
             'A full paper or an extended abstract (max. [TBA] pages, any citation style).',
