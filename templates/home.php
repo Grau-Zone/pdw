@@ -123,9 +123,10 @@ $initials = static function (string $name): string {
 
 <section id="faculty" class="rg-section">
     <div class="rg-container">
-        <div class="rg-eyebrow">Faculty</div>
+        <div class="rg-eyebrow">Senior faculty</div>
         <h2 class="rg-h2 rg-mt-1">Who gives <span class="rg-hl">feedback</span></h2>
-        <div class="rg-grid rg-grid--3 rg-mt-3">
+        <?php // Three columns for 3, 6, 9 … people, otherwise two (e.g. 4 people as a 2×2 grid). ?>
+        <div class="rg-grid <?= count($event['faculty']) % 3 === 0 ? 'rg-grid--3' : 'rg-grid--2' ?> rg-mt-3">
             <?php foreach ($event['faculty'] as $person): ?>
                 <article class="rg-card ws-person">
                     <?php if (!empty($person['photo'])): ?>

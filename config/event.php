@@ -88,11 +88,14 @@ return [
         ['time' => '17:00', 'end' => '', 'title' => 'Apéro and farewell', 'kind' => 'break'],
     ],
 
+    // Senior faculty who attend, alphabetical by surname.
     // 'photo' is optional: a file in public/assets/img/ (only with the person's permission).
     'faculty' => [
+        // Affiliation from his Stevens profile (Oct 2026) – please confirm with him.
+        ['name' => 'Prof. Dr. Aleksi Aaltonen', 'affiliation' => 'Stevens Institute of Technology', 'role' => 'Senior faculty', 'bio' => '', 'photo' => ''],
+        ['name' => 'Prof. Dr. Andreas Hein', 'affiliation' => 'University of St.Gallen', 'role' => 'Senior faculty', 'bio' => '', 'photo' => ''],
+        ['name' => 'Prof. Dr. Christine Legner', 'affiliation' => 'HEC Lausanne, University of Lausanne', 'role' => 'Senior faculty', 'bio' => '', 'photo' => ''],
         ['name' => 'Prof. Dr. Jan Marco Leimeister', 'affiliation' => 'University of St.Gallen', 'role' => 'Host', 'bio' => '', 'photo' => ''],
-        ['name' => 'Prof. Dr. Andreas Hein', 'affiliation' => 'University of St.Gallen', 'role' => 'Faculty (morning sessions)', 'bio' => '', 'photo' => ''],
-        ['name' => 'Aleksi [surname TBA]', 'affiliation' => 'TBA', 'role' => 'Guest faculty', 'bio' => '', 'photo' => ''],
     ],
 
     'venue' => [
