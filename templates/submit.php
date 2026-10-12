@@ -5,14 +5,11 @@
  * @var array<string, string> $errors
  */
 ?>
-<section class="rg-section">
-    <div class="rg-container">
-        <div class="rg-glass rg-card ws-formcard">
-            <div class="rg-eyebrow">Call for papers</div>
-            <h1 class="rg-h2 rg-mt-1">Submit your <span class="rg-hl">paper</span></h1>
-            <div class="rg-mt-3">
-                <?= $view->render('partials/submission', ['values' => $values, 'errors' => $errors]) ?>
-            </div>
+<section class="section section--submit section--first on-green" aria-labelledby="submit-title">
+    <div class="wrap">
+        <div class="shead">
+            <h1 id="submit-title" class="page__title">Submit your paper</h1>
         </div>
+        <?= $view->render('partials/submission', ['values' => $values, 'errors' => $errors]) ?>
     </div>
 </section>

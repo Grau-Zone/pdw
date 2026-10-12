@@ -6,3 +6,8 @@
 /config/env.php
 /storage/*
 !/storage/.htaccess
+/HANDOVER.md
+/.playwright-mcp/
+/graphify-out/
+/.impeccable/review/
+/.impeccable/hook.cache.json

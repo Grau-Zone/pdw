@@ -17,7 +17,7 @@ $gate = $app->gate();
 $uploads = $app->uploads();
 $contact = $app->event['contact']['email'];
 $show = static function (array $values, array $errors, int $status) use ($app): never {
-    $app->page('submit', ['pageTitle' => 'Submit your paper', 'values' => $values, 'errors' => $errors], $status);
+    $app->page('submit', ['pageTitle' => 'Submit your paper', 'values' => $values, 'errors' => $errors, 'formPage' => true], $status);
     exit;
 };
 

@@ -1,0 +1,19 @@
+/* fx/field.css – the hero data field (fx/field.js).
+   The canvas is decorative and empty until the script has drawn its first
+   frame; it then fades in (an opacity fade only, so it also runs with
+   reduced motion, as a plain ease-out). Without the script it is never
+   hidden (and simply stays empty). */
+@media all {
+  html.js .hero__field {
+    opacity: 0;
+    transition: opacity 600ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+  html.js .hero__field.is-ready { opacity: 1; }
+}
+@media not all { /* was: reduced motion (ignored by decision, see DESIGN.md) */
+  html.js .hero__field {
+    opacity: 0;
+    transition: opacity 600ms ease-out;
+  }
+  html.js .hero__field.is-ready { opacity: 1; }
+}

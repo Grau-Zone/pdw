@@ -2,17 +2,20 @@
 
 Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Alles läuft auf einem Schweizer Shared Hosting (z. B. Infomaniak). Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
 
-**Design:** Look des Sovereignty Radar. Die Übergabe dazu liegt lokal in `design-radar-gruen/HANDOVER.md` und ist nicht im Repo. Akzentfarbe ist **HSG-Grün `#00802F`**, wie auf unisg.ch, statt des Vorschlags `#25D07A` aus der Übergabe.
+**Design:** Die Farben kommen von der Institutsseite [iwi.unisg.ch](https://iwi.unisg.ch/). Gesetzt ist alles mit der Disziplin von anduril.com und palantir.com: eine Schrift, Grösse statt Effekte, Haarlinien statt Karten, Farbe nur als grosse Fläche. Das ist die Vorgabe des Lehrstuhls vom 12.10.2026; den früheren Radar-Look ersetzt sie.
 
-- Weil das HSG-Grün dunkler ist, steht auf den grünen Knöpfen weisse Schrift.
-- Links und kleine Labels nutzen eine helle Abstufung im HSG-Farbton (`#69D490`).
-- Das dunkle HSG-Grün `#0A5E2D` steht als `--rg-accent-dark` bereit.
-- Alle Farbwerte stehen oben in `public/assets/radar-gruen.css`.
-
-- Die Bausteine stecken in `public/assets/radar-gruen.css` (Präfix `rg-`), die Schriften liegen lokal in `public/assets/fonts/` (SIL OFL).
-- Projektspezifische Ergänzungen stehen in `public/assets/style.css` (Präfix `ws-`).
-- Das Radar-Signet ist bewusst nicht übernommen.
-- Der Ordner `design-radar-gruen/` ist nur Vorlage und wird nicht hochgeladen.
+- **Farben:**
+  - Weisser Grund, Text `#111111`.
+  - HSG-Grün `#00802F` für alle Aktionen, Links und die Frist-Kachel.
+  - Dunkelgrün `#0A5E2D` für Faculty, Menü und Footer.
+  - Grau `#6F706F` und Hellgrau `#F5F5F5`.
+  - Alle Werte stehen oben in `public/assets/site.css`, mit den Kontrastwerten.
+- **Schrift:** Source Sans 3 (300/400/600), lokal in `public/assets/fonts/` (SIL OFL).
+- **Logo:** Das HSG-Logo liegt in `public/assets/img/hsg-logo.svg`. Die formelle Freigabe durch die HSG-Kommunikation steht noch aus.
+- **Vorlagen:**
+  - Die Frist-Kachel in `templates/partials/deadline-tile.php` folgt dem Deadline-Gate (offen / noch nicht offen / geschlossen).
+  - Solange `submission.deadline_confirmed` in `config/event.php` auf `false` steht, zeigt sie „Provisional“.
+- **Ablage:** Der Ordner `design-radar-gruen/` (alter Look) ist nur Vorlage und wird nicht hochgeladen.
 
 > **Stand:** lokales Gerüst. Alle Inhalte sind Platzhalter (**TBA**) und kommen von Leon/HSG. Siehe [Offene Punkte](#offene-punkte).
 
@@ -178,9 +181,8 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 
 **Design (Leon/Adrian)**
 
-- [x] Grünton: HSG-Grün `#00802F`. Die verbindliche Freigabe für Corporate Design und Logo durch die HSG-Kommunikation steht noch aus.
-- [ ] Eigenes Zeichen statt grünem Punkt? Das Radar-Signet bewusst nicht übernommen
-- [ ] Hero-Visual (Bild oder Grafik)? Das Radar-Original hat eine animierte Grafik rechts im Hero
+- [x] Farben nach iwi.unisg.ch, Look an Anduril/Palantir angelehnt (Vorgabe Lehrstuhl, 12.10.2026). Die verbindliche Freigabe für Corporate Design und Logo durch die HSG-Kommunikation steht noch aus.
+- [x] Hero: weiss mit grüner Frist-Kachel statt Bild (12.10.2026)
 
 **Inhalte**
 
@@ -209,4 +211,4 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 **Recht**
 
 - [ ] Datenschutzerklärung und Impressum nach HSG-Event-Vorlage, Freigabe durch datenschutz@unisg.ch, danach `privacy.approved = true`
-- [ ] Löschfrist (`privacy.delete_after`), Logo- und CI-Freigabe durch die Kommunikation (Farben in `public/assets/style.css`)
+- [ ] Löschfrist (`privacy.delete_after`), Logo- und CI-Freigabe durch die Kommunikation (Farben in `public/assets/site.css`, Logo in `public/assets/img/hsg-logo.svg`)

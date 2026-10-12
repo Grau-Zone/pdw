@@ -20,9 +20,10 @@ return [
 
     'event' => [
         'title' => 'Doctoral Seminar on Data Studies',          // TBA – working title ("PDW" vs. "doctoral seminar")
-        'title_highlight' => 'Data Studies',                    // part of the title shown in the accent colour ('' for none)
-        'short_title' => 'HSG Doctoral Seminar 2026',           // used in e-mail subjects
-        'tagline' => 'A one-day paper development workshop for doctoral students', // TBA
+        'short_title' => 'HSG Doctoral Seminar 2026',           // used in e-mail subjects and the page header
+        'tagline' => 'A one-day paper development workshop for doctoral students.', // TBA
+        // Second half of the hero statement, shown in grey after the tagline ('' for none).
+        'tagline_more' => 'Each accepted paper receives focused feedback from senior faculty in a small group.',
         'date' => '2026-11-13',                                 // TBA – final decision on Mon 12 Oct
         'time' => '09:00–17:00',                                // TBA
         'format' => 'In person',                                // TBA – hybrid?
@@ -42,6 +43,8 @@ return [
         'enabled' => true,
         'opens_at' => null,                                     // optional, e.g. '2026-10-14 12:00'
         'deadline' => '2026-10-30 23:59',                       // TBA – shown as "23:59 Zurich time (CET, UTC+01:00)"
+        // false shows "Provisional" next to the deadline. Set to true once the organisers confirmed it.
+        'deadline_confirmed' => false,
         // Uploads within this many minutes after the deadline are still accepted (not shown on the site).
         'grace_minutes' => 5,
         'notification_date' => '2026-11-03',                    // TBA

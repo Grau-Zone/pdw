@@ -59,18 +59,21 @@ foreach ($pages as $file => [$template, $vars]) {
 
     // The preview cannot submit anything – say so and disable the button.
     $html = str_replace(
-        ['Draft · content not final · please do not submit real papers yet', 'type="submit">Submit paper →'],
-        ['Preview · draft content · the form does not work in this preview', 'type="button" disabled>Submit paper →'],
+        ['Draft · content not final · please do not submit real papers yet', 'type="submit"><span data-label>Submit paper</span>'],
+        ['Preview · draft content · the form does not work in this preview', 'type="button" disabled><span data-label>Submit paper</span>'],
         $html
     );
     file_put_contents("$out/$file", $html);
 }
 
-foreach (['fonts.css', 'radar-gruen.css', 'style.css', 'app.js', 'favicon.svg'] as $asset) {
+foreach (['fonts.css', 'site.css', 'app.js', 'favicon.svg'] as $asset) {
     copy("$root/public/assets/$asset", "$out/assets/$asset");
 }
-foreach (glob("$root/public/assets/fonts/*") ?: [] as $font) {
-    copy($font, "$out/assets/fonts/" . basename($font));
+foreach (['fonts', 'img', 'fx'] as $dir) {
+    @mkdir("$out/assets/$dir", 0750, true);
+    foreach (glob("$root/public/assets/$dir/*") ?: [] as $file) {
+        copy($file, "$out/assets/$dir/" . basename($file));
+    }
 }
 
 @unlink($zipFile);

@@ -5,19 +5,12 @@
 
 $i = $event['imprint'];
 ?>
-<section class="rg-section">
-    <div class="rg-container ws-narrow ws-prose">
-        <div class="rg-eyebrow">Legal</div>
-        <h1 class="rg-h2 rg-mt-1">Imprint</h1>
-        <div class="rg-grid rg-grid--2 rg-mt-3">
-            <div class="rg-card">
-                <div class="rg-label">Publisher</div>
-                <p class="rg-mt-1"><?= e($i['publisher']) ?><br><?= e($i['address']) ?></p>
-            </div>
-            <div class="rg-card">
-                <div class="rg-label">Responsible for content</div>
-                <p class="rg-mt-1"><?= e($i['responsible']) ?><br><a href="mailto:<?= e($i['email']) ?>"><?= e($i['email']) ?></a></p>
-            </div>
-        </div>
+<section class="page">
+    <div class="wrap narrow">
+        <h1 class="page__title">Imprint</h1>
+        <dl class="index mt-4">
+            <div><dt class="index__key">Publisher</dt><dd><?= e($i['publisher']) ?><br><?= e($i['address']) ?></dd></div>
+            <div><dt class="index__key">Responsible</dt><dd><?= e($i['responsible']) ?><br><a href="mailto:<?= e($i['email']) ?>"><?= e($i['email']) ?></a></dd></div>
+        </dl>
     </div>
 </section>
