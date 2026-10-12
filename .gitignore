@@ -1,0 +1,8 @@
+/vendor/
+/export/
+/material/
+/design-radar-gruen/
+/.claude/
+/config/env.php
+/storage/*
+!/storage/.htaccess

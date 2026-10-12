@@ -1,0 +1,5 @@
+# The site runs on a Linux server: keep LF line endings in the repository.
+* text=auto eol=lf
+*.woff2 binary
+*.png binary
+*.pdf binary

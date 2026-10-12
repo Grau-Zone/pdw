@@ -1,0 +1,6 @@
+# Safety net in case the hosting panel cannot point the document root to
+# public/: nothing outside public/ may ever be served.
+Options -Indexes
+RedirectMatch 404 ^/(config|src|storage|templates|bin|tests|vendor|design-radar-gruen|export|material)(/|$)
+RedirectMatch 404 /\.(git|env|claude)
+RedirectMatch 404 ^/(composer\.(json|lock)|README\.md|\.gitignore)$

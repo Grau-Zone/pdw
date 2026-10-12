@@ -1,0 +1,38 @@
+{
+    "name": "hsg/workshop-site",
+    "description": "Landing page and paper submission with deadline gate for a one-day doctoral workshop",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.2",
+        "ext-fileinfo": "*",
+        "ext-mbstring": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-zip": "*",
+        "phpmailer/phpmailer": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Workshop\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php -S localhost:8080 -t public -d upload_max_filesize=12M -d post_max_size=16M -d display_errors=stderr"
+        ],
+        "test": "@php tests/run.php",
+        "smoke": "@php tests/smoke.php",
+        "check": "@php bin/check-env.php"
+    },
+    "config": {
+        "platform": {
+            "php": "8.2.0"
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
