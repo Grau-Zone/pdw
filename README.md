@@ -1,4 +1,4 @@
-﻿# Workshop-Website (Doktorandenseminar HSG, 13.11.2026)
+# Workshop-Website (Doktorandenseminar HSG, 13.11.2026)
 
 Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Alles läuft auf einem Schweizer Shared Hosting (z. B. Infomaniak). Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
 
