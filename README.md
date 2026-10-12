@@ -1,4 +1,4 @@
-# Workshop-Website (Doktorandenseminar HSG, 13.11.2026)
+﻿# Workshop-Website (Doktorandenseminar HSG, 13.11.2026)
 
 Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Alles läuft auf einem Schweizer Shared Hosting (z. B. Infomaniak). Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
 
@@ -56,12 +56,12 @@ php bin/export-preview.php
 
 Das Skript erzeugt `export/workshop-vorschau.zip`, etwa 400 KB. Entpacken und `index.html` doppelklicken. Das Formular ist in der Vorschau ausgeschaltet. Nach jeder Änderung einfach neu erzeugen.
 
-**Online-Vorschau:** https://grau-zone.github.io/pdw/ (GitHub Pages, Branch `gh-pages`)
+**Online-Vorschau:** https://sovereignty-radar.iwi.unisg.ch/pdw/ (GitHub Pages, Branch `gh-pages`; das Grau-Zone-Konto leitet github.io auf diese Domain um)
 - Nur statisch, das Formular ist aus. Die Seite liegt auf US-Servern, enthält aber keine Daten, nur Entwurfsinhalte.
 - Aktualisieren: Vorschau mit Adresse erzeugen, dann den Inhalt von `export/vorschau/` als neuen Commit auf `gh-pages` pushen.
 
   ```bash
-  php bin/export-preview.php https://grau-zone.github.io/pdw/
+  php bin/export-preview.php https://sovereignty-radar.iwi.unisg.ch/pdw/
   ```
 
 - Die echte Seite mit Formular kommt auf Schweizer PHP-Hosting, siehe Deployment.
