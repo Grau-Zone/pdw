@@ -1,4 +1,4 @@
-# Workshop-Website (Doktorandenseminar HSG, 13.11.2026)
+# Workshop-Website (Paper Development Workshop HSG, 3.12.2026)
 
 Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Alles läuft auf einem Schweizer Shared Hosting (z. B. Infomaniak). Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
 
@@ -17,7 +17,7 @@ Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist be
   - Solange `submission.deadline_confirmed` in `config/event.php` auf `false` steht, zeigt sie „Provisional“.
 - **Ablage:** Der Ordner `design-radar-gruen/` (alter Look) ist nur Vorlage und wird nicht hochgeladen.
 
-> **Stand:** lokales Gerüst. Alle Inhalte sind Platzhalter (**TBA**) und kommen von Leon/HSG. Siehe [Offene Punkte](#offene-punkte).
+> **Stand 13.10.2026:** Datum, Tracks, Faculty, Deadline, Rückmeldung und Panel sind bestätigt; CfP-Text, Abstract-Format, Räume und genaue Agenda sind noch TBA. Siehe [Offene Punkte](#offene-punkte).
 
 ## Schnellstart lokal
 
@@ -186,20 +186,24 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 
 **Inhalte**
 
-- [ ] Titel und Format (PDW oder Doktorandenseminar, Thema „data studies“?), finales Datum, Uhrzeit, Raum (Raumantrag beim Events Office), hybrid ja oder nein, Kosten
-- [ ] Call-for-Papers-Text, Faculty mit Bios und Fotos (nur mit Freigabe), Anreise
-- [ ] Programm: Es ist wie beim CHAIS PDW Bern aufgebaut (Vorlage in `material/`, nicht hochladen). Offen sind:
-  - Räume und Leitung der zwei Tracks
+- [x] Format und Datum: eintägiger Paper Development Workshop am Do 3.12.2026 (Feedback 13.10.2026)
+- [x] Zwei Tracks: Track 1 „Data Platforms and Ecosystems“ (Leimeister, Hein; ersetzt „Data & Digital Sovereignty“, 14.10.), Track 2 „Data Governance“ (Legner, Aaltonen)
+- [x] Keine Keynote und keine 1:1-Coachings; Panel (45 Min.) mit allen vier Faculty, moderiert von Andreas Hein; dritter Paper-Block am Nachmittag (14.10.)
+- [ ] Endgültiger Titel (aktuell „Paper Development Workshop on Data Studies“), Uhrzeiten, Raum (Raumantrag beim Events Office), hybrid ja oder nein, Kosten
+- [ ] Call-for-Papers-Text mit dem Themenfeld pro Track, Faculty mit Bios und Fotos (nur mit Freigabe), Anreise
+- [ ] Programm: Es ist wie beim CHAIS PDW Bern aufgebaut (Vorlage in `material/`, nicht hochladen). Die genaue Agenda folgt; offen sind:
+  - Räume der zwei Tracks
   - Aufteilung der 30 Minuten pro Paper in Präsentation und Feedback
-  - Keynote: Person und Thema
   - Ort des Mittagessens
-  - Anzahl der Slots: aktuell 10 (3 + 2 pro Track), die Zahl begrenzt die angenommenen Paper
+  - Slots in `config/event.php` an das finale Programm anpassen
   - Nach der Auswahl Namen und Titel in `config/event.php` eintragen, nur mit Einwilligung ins öffentliche Programm (Häkchen beim Einreichen)
 
 **Einreichung**
 
-- [ ] Art (Full Paper oder Extended Abstract), Seitenlimit, Pflichtfelder
-- [ ] Deadline mit Uhrzeit, Kulanz ja oder nein, Datum der Zu- und Absagen
+- [x] Art: Extended Abstract (Feedback 13.10.2026)
+- [ ] Format und Struktur des Extended Abstract, Pflichtfelder
+- [x] Deadline Do 5.11.2026 (Uhrzeit 23:59 Zürich als Annahme), Zu- und Absagen am 12.11.2026
+- [ ] Uhrzeit der Deadline bestätigen, Kulanz ja oder nein
 - [ ] Anmeldung nur zum Zuhören (noch nicht gebaut)?
 
 **Personen und Mail**

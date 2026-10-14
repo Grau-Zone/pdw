@@ -17,9 +17,9 @@ THESIS: White paper, green deadline. The page reads like an IWI call for papers 
 
 OWN-WORLD: White #FFFFFF ground, ink #111111, grey #6F706F, band #F5F5F5, HSG green #00802F for every action and the deadline tile, dark green #0A5E2D for faculty tiles, menu sheet and footer, mint #CFE6D6 for secondary text on dark green, beige #E1D7C3 only for the draft bar. Source Sans 3 300/400/600, light display, tabular figures. Square corners, 1px rules, IWI diagonal edge on the deadline tile and the submit band, green square arrow buttons, SVG icons.
 
-STORY: Visitor learns what (doctoral seminar on data studies), when and where (Fri 13 Nov, St.Gallen), and that the deadline is 30 Oct 23:59 Zurich time; believes the feedback is serious (faculty, programme); submits through a calm, robust form and gets an ID.
+STORY: Visitor learns what (paper development workshop on data studies, two tracks), when and where (Thu 3 Dec, St.Gallen), and that the deadline is 5 Nov 23:59 Zurich time; believes the feedback is serious (faculty, programme); submits through a calm, robust form and gets an ID.
 
-FIRST VIEWPORT: Desktop 1440: HSG logo + nav + green "Submit by 30 Oct" button in a 72px white bar. Left 7 columns: date line 24px, H1 96px light, two-tone statement 28px, two text links. Right 5 columns: HSG-green deadline tile with slanted top edge, "30 Oct" at 144px light, time zone line, white "Submit your paper" button. Mobile 390: logo, Submit and Menu in a 60px bar; H1 44px; deadline tile with "30 Oct" at 80px and full-width button above the fold.
+FIRST VIEWPORT: Desktop 1440: HSG logo + nav + green "Submit by 5 Nov" button in a 72px white bar. Left 7 columns: date line 24px, H1 96px light, two-tone statement 28px, two text links. Right 5 columns: HSG-green deadline tile with slanted top edge, "5 Nov" at 144px light, time zone line, white "Submit your paper" button. Mobile 390: logo, Submit and Menu in a 60px bar; H1 44px; deadline tile with "5 Nov" at 80px and full-width button above the fold.
 
 FORM: Pinned by the user and the chair (IWI colours, Anduril/Palantir coolness); no concept-seed roll. Chosen from three workflow directions: "IWI White, Statement Index" with grafts from "Cut & Tile". Seed key: none (pinned brief). Hero variant chosen by the user: all white with the green tile.
 
@@ -27,4 +27,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Unresolved
 
-Logo use pending formal approval by HSG Communications (the user chose to use the HSG logo now). Final title, CfP text, deadline confirmation (tile shows "Provisional" until `deadline_confirmed`).
+Logo use pending formal approval by HSG Communications (the user chose to use the HSG logo now). Final title, CfP text and track scope, extended-abstract format, deadline time (23:59 assumed), rooms, exact agenda.

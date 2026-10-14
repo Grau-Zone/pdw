@@ -42,7 +42,7 @@ return [
     'mail' => [
         'transport' => 'log',
         'from_address' => 'noreply@example.org',
-        'from_name' => 'HSG Doctoral Seminar (local)',
+        'from_name' => 'HSG Paper Development Workshop (local)',
         'reply_to' => 'workshop@example.org',
         'notify' => ['organiser@example.org'],
     ],

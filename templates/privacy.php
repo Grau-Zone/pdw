@@ -29,7 +29,7 @@ $deleteAfter = Dates::day(Dates::parse($p['delete_after'], $app->tz));
         <p><?= e($p['controller']) ?>. Data protection officer: <a href="mailto:<?= e($p['dpo_email']) ?>"><?= e($p['dpo_email']) ?></a>.</p>
 
         <h2>What we collect and why</h2>
-        <p>When you submit a paper we process your name, e-mail address, affiliation, the paper and the information you enter in the form, in order to organise the seminar: to select papers, to assign them to sessions and faculty, and to contact you about the seminar.</p>
+        <p>When you submit a paper we process your name, e-mail address, affiliation, the paper and the information you enter in the form, in order to organise the workshop: to select papers, to assign them to tracks, sessions and faculty, and to contact you about the workshop.</p>
         <p>[TBA: legal basis under the St.Gallen data protection act / university act; GDPR wording if applicable.]</p>
 
         <h2>Who receives your data</h2>

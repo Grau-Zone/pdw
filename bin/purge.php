@@ -21,7 +21,7 @@ $confirm = in_array('--confirm', $argv, true);
 $deleteAfter = Dates::parse($app->event['privacy']['delete_after'], $app->tz);
 echo 'Deletion date in the privacy notice: ' . Dates::day($deleteAfter) . "\n";
 if ($app->now() < $deleteAfter->modify('-60 days')) {
-    echo "Note: that is still more than 60 days away – are you sure the seminar is over?\n";
+    echo "Note: that is still more than 60 days away – are you sure the workshop is over?\n";
 }
 
 $files = [];

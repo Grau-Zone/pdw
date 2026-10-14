@@ -42,8 +42,8 @@ $hasPapers = static function (array $slots): bool {
                     <ul class="tracks">
                         <?php foreach ($item['slots'] as $trackId => $trackSlots): ?>
                             <li>
-                                <span><?= e($tracks[$trackId]['name']) ?><span class="tracks__sep"> · </span><span class="tracks__meta"><?= e($tracks[$trackId]['room']) ?> · <?= e($tracks[$trackId]['chair']) ?></span></span>
-                                <span class="tracks__count"><?= count($trackSlots) ?> papers</span>
+                                <span><?= e($tracks[$trackId]['name']) ?><span class="tracks__sep"> · </span><span class="tracks__meta">Chairs: <?= e($tracks[$trackId]['chair']) ?></span></span>
+                                <span class="tracks__count"><?= e($tracks[$trackId]['room']) ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>

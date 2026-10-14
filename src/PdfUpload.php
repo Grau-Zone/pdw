@@ -26,14 +26,14 @@ final class PdfUpload
     public function validate(mixed $file): ?string
     {
         if (!is_array($file) || !isset($file['error'], $file['tmp_name']) || !is_int($file['error'])) {
-            return 'Please attach your paper as a PDF file.';
+            return 'Please attach your extended abstract as a PDF file.';
         }
 
         switch ($file['error']) {
             case UPLOAD_ERR_OK:
                 break;
             case UPLOAD_ERR_NO_FILE:
-                return 'Please attach your paper as a PDF file.';
+                return 'Please attach your extended abstract as a PDF file.';
             case UPLOAD_ERR_INI_SIZE:
             case UPLOAD_ERR_FORM_SIZE:
                 return $this->tooLargeMessage();
@@ -59,7 +59,7 @@ final class PdfUpload
         $head = (string) file_get_contents($tmp, false, null, 0, 5);
         $mime = (new finfo(FILEINFO_MIME_TYPE))->file($tmp);
         if ($head !== '%PDF-' || $mime !== 'application/pdf') {
-            return 'Only PDF files are accepted. Please export your paper as PDF and upload it again.';
+            return 'Only PDF files are accepted. Please export your extended abstract as PDF and upload it again.';
         }
 
         return null;

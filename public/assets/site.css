@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Doctoral Seminar on Data Studies – site styles
+   Paper Development Workshop on Data Studies – site styles
    Colours and spirit of the host institute (iwi.unisg.ch), set with the
    discipline of anduril.com / palantir.com: one humanist face, scale instead
    of effects, hairline rows instead of cards, colour only as large flat
@@ -298,8 +298,8 @@ input, textarea, button { font: inherit; color: inherit; }
 .people { padding: 0; list-style: none; border-top: 1px solid var(--rule-deep); }
 .person { align-items: baseline; row-gap: 4px; padding: 28px 0; border-bottom: 1px solid var(--rule-deep); }
 .person__name { grid-column: 1 / span 6; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.15; overflow-wrap: break-word; hyphens: auto; }
-.person__aff { grid-column: 7 / span 4; color: var(--mint); font-size: 18px; }
-.person__role { grid-column: 11 / -1; color: var(--mint); font-size: 18px; text-align: right; }
+.person__aff { grid-column: 7 / span 3; color: var(--mint); font-size: 18px; }
+.person__role { grid-column: 10 / -1; color: var(--mint); font-size: 18px; text-align: right; }
 .person__bio { grid-column: 7 / -1; color: var(--mint); font-size: 16px; }
 .person__photo { width: 88px; height: 88px; margin-bottom: 12px; object-fit: cover; }
 

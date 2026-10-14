@@ -118,7 +118,7 @@ $paperIds = 'hint-paper paper-check' . (isset($errors['paper']) ? ' err-paper' :
                 <?php endforeach; ?>
 
                 <div class="field">
-                    <label class="field__label" id="f-paper-label" for="f-paper">Paper (PDF) <span class="req" aria-hidden="true">*</span></label>
+                    <label class="field__label" id="f-paper-label" for="f-paper">Extended abstract (PDF) <span class="req" aria-hidden="true">*</span></label>
                     <div class="file" data-file>
                         <input id="f-paper" name="paper" type="file" accept="application/pdf,.pdf" required
                                aria-labelledby="f-paper-label f-paper-btn" aria-describedby="<?= e($paperIds) ?>"<?= isset($errors['paper']) ? ' aria-invalid="true"' : '' ?>>

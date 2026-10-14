@@ -17,7 +17,8 @@ $venue = $event['venue'];
 $faculty = $event['faculty'];
 $about = $event['about'];
 // The running band only repeats facts that are on the page anyway (decorative, hidden from screen readers).
-$tickerItems = ['Feedback from senior faculty', 'Two parallel paper tracks', '1:1 meetings with senior scholars', 'Non-archival', $ev['fee'], 'University of St.Gallen'];
+$tickerItems = ['Data Platforms and Ecosystems', 'Data Governance', 'Feedback from senior faculty', 'Panel with the senior faculty', 'Non-archival', $ev['fee']];
+$tracks = $event['tracks'];
 ?>
 <section class="hero" aria-labelledby="title" data-hero>
     <canvas class="hero__field" data-field aria-hidden="true"></canvas>
@@ -53,7 +54,7 @@ $tickerItems = ['Feedback from senior faculty', 'Two parallel paper tracks', '1:
 <section id="about" class="section" aria-labelledby="about-title">
     <div class="wrap">
         <div class="grid shead">
-            <h2 id="about-title">About the seminar</h2>
+            <h2 id="about-title">About the workshop</h2>
             <p class="shead__fact"><?= e($ev['format']) ?> · <?= e($ev['language']) ?> · <?= e($ev['fee']) ?></p>
         </div>
         <?php if ($about !== []): ?>
@@ -64,6 +65,13 @@ $tickerItems = ['Feedback from senior faculty', 'Two parallel paper tracks', '1:
                 <?php foreach (array_slice($about, 1) as $paragraph): ?>
                     <p class="lead"><?= e($paragraph) ?></p>
                 <?php endforeach; ?>
+                <h3 class="subhead mt-4">Tracks</h3>
+                <dl class="index">
+                    <?php foreach ($tracks as $track): ?>
+                        <?php [$trackNo, $trackTopic] = array_pad(explode(': ', $track['name'], 2), 2, ''); ?>
+                        <div><dt class="index__key"><?= e($trackNo) ?></dt><dd><?= e($trackTopic !== '' ? $trackTopic : $trackNo) ?><br><span class="small">Chairs: <?= e($track['chair']) ?></span></dd></div>
+                    <?php endforeach; ?>
+                </dl>
             </div>
             <div class="split__side">
                 <h3 class="subhead">What to submit</h3>
@@ -96,7 +104,7 @@ $tickerItems = ['Feedback from senior faculty', 'Two parallel paper tracks', '1:
             </li>
             <li class="grid">
                 <span class="dates__date"><?= e($eventDay->format('j M')) ?></span>
-                <span class="dates__what">Seminar</span>
+                <span class="dates__what">Workshop</span>
                 <span class="dates__detail"><?= e(Dates::day($eventDay)) ?>, <?= e($ev['time']) ?> · <?= e($venue['name']) ?></span>
             </li>
         </ol>

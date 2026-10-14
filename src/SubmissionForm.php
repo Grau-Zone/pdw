@@ -28,8 +28,8 @@ final class SubmissionForm
             'affiliation' => ['University / institution', 200, true, false, ''],
             'title' => ['Paper title', 300, true, false, ''],
             'coauthors' => ['Co-authors', 300, false, false, 'Optional.'],
-            'keywords' => ['Topic and method keywords', 200, false, false, 'Optional. Helps us group papers into sessions.'],
-            'abstract' => ['Abstract', $this->abstractMax, $this->abstractRequired, true, sprintf('Max. %d characters.', $this->abstractMax)],
+            'keywords' => ['Topic and method keywords', 200, false, false, 'Optional. Helps us assign papers to tracks and sessions.'],
+            'abstract' => ['Short abstract', $this->abstractMax, $this->abstractRequired, true, sprintf('Max. %d characters.', $this->abstractMax)],
             'feedback' => ['What feedback would help you most?', 1000, false, true, 'Optional. E.g. framing, method, positioning, target journal.'],
         ];
     }

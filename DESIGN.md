@@ -1,6 +1,6 @@
 ---
-name: Doctoral Seminar on Data Studies
-description: Call for papers and submission site for a one-day doctoral seminar at HSG, set in IWI colours with a cool, disciplined hand.
+name: Paper Development Workshop on Data Studies
+description: Call for papers and submission site for a one-day paper development workshop at HSG, set in IWI colours with a cool, disciplined hand.
 colors:
   hsg-green: "#00802f"
   green-deep: "#0a5e2d"
@@ -219,7 +219,7 @@ components:
     padding: "1px 8px"
 ---
 
-# Design System: Doctoral Seminar on Data Studies
+# Design System: Paper Development Workshop on Data Studies
 
 ## Overview
 
@@ -368,7 +368,7 @@ There are no cards. Lists of facts, dates, sessions, tracks and people are **ind
 Section links in 17px ink with a 2px transparent bottom border that turns green on hover. The mobile menu is a native disclosure: a 48px square toggle with a 1px ink border that fills dark green when open; the sheet is a dark green field of 24px light links on deep-green hairlines, each with a trailing arrow, ending in a full-width light button. Where view transitions are supported the sheet opens and closes as a wipe whose lower edge is the IWI diagonal; elsewhere it falls back to a straight clip-path wipe from the top.
 
 ### Deadline Tile
-The signature component. An HSG green block under the IWI cut, holding the label with a "Provisional" chip, the weekday, the date as the tile figure, the time with zone, the countdown row and a full-width light button. When closed it turns IWI grey, drops the countdown and the button, and gets no pointer light.
+The signature component. An HSG green block under the IWI cut, holding the label (with a "Provisional" chip while the deadline is unconfirmed), the weekday, the date as the tile figure, the time with zone, the countdown row and a full-width light button. When closed it turns IWI grey, drops the countdown and the button, and gets no pointer light.
 
 ### Countdown
 A row of three equal columns (days, hours, minutes) under a 1px white rule inside the tile: light tabular figures with 14px unit letters, spoken as full words for assistive technology. No seconds. It ticks once a minute against the deadline itself; a changed digit rolls up out of a clip box. When the deadline passes, the script turns the tile into its closed state. Without script it shows the server-rendered time left; it is hidden in print.

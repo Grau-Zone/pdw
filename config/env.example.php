@@ -25,7 +25,7 @@ return [
         'username' => 'noreply@example.ch',
         'password' => '',
         'from_address' => 'noreply@example.ch',                 // an address on the event domain, never @unisg.ch
-        'from_name' => 'HSG Doctoral Seminar',
+        'from_name' => 'HSG Paper Development Workshop',
         'reply_to' => 'workshop@example.ch',                    // function mailbox, not a personal address
         'notify' => [],                                         // organisers who get a short note per submission
     ],

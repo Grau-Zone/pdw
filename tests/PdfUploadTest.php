@@ -31,7 +31,7 @@ return [
     },
     'maps PHP upload errors to messages' => function () use ($uploads, $file) {
         same($uploads->tooLargeMessage(), $uploads->validate($file('', UPLOAD_ERR_INI_SIZE)));
-        same('Please attach your paper as a PDF file.', $uploads->validate($file('', UPLOAD_ERR_NO_FILE)));
+        same('Please attach your extended abstract as a PDF file.', $uploads->validate($file('', UPLOAD_ERR_NO_FILE)));
     },
     'rejects missing or array-shaped file fields' => function () use ($uploads) {
         truthy($uploads->validate(null) !== null, 'null accepted');

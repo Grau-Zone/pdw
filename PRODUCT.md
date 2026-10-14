@@ -8,24 +8,24 @@ web
 
 ## Users
 
-Doctoral students in information systems and data studies, from the University of St.Gallen (HSG) and from other universities. They arrive from a call for papers, decide whether the seminar fits their paper, and then submit a PDF before the deadline. Many will read on a phone first and submit later from a laptop.
+Doctoral students in information systems and data studies, from the University of St.Gallen (HSG) and from other universities. They arrive from a call for papers, decide whether the workshop fits their paper, and then submit an extended abstract as a PDF before the deadline. Many will read on a phone first and submit later from a laptop.
 
 Secondary audiences: senior faculty checking the programme, and the organisers working in the admin area.
 
 ## Product Purpose
 
-Landing page and paper submission for a one-day doctoral seminar / paper development workshop (PDW) on data studies at HSG, Friday 13 November 2026, St.Gallen.
+Landing page and paper submission for a one-day paper development workshop (PDW) for doctoral students at HSG, Thursday 3 December 2026, St.Gallen, in two tracks: Data Platforms and Ecosystems (chairs Jan Marco Leimeister, Andreas Hein) and Data Governance (chairs Christine Legner, Aleksi Aaltonen). Submissions are extended abstracts; deadline 5 November 2026, notification 12 November 2026.
 
-Success means enough fitting submissions to fill the paper slots (currently 10 across two parallel tracks), each submitted correctly and before the deadline, with no lost or duplicated papers.
+Success means enough fitting submissions to fill the paper slots in the two parallel tracks, each submitted correctly and before the deadline, with no lost or duplicated papers.
 
 ## Positioning
 
-A small, in-person seminar where every accepted paper gets focused feedback from senior faculty in a small group. Digitally sovereign: hosted in Switzerland, no US clouds, CDNs, trackers, cookies, external fonts or captchas.
+A small, in-person workshop where every accepted paper gets focused feedback from senior faculty in a small group. Digitally sovereign: hosted in Switzerland, no US clouds, CDNs, trackers, cookies, external fonts or captchas.
 
 ## Operating Context
 
-- Content lives in one file, `config/event.php`; most values are still TBA (title, CfP text, deadline, rooms, keynote, track chairs).
-- Programme follows a fixed format: two parallel paper tracks in the morning (30-minute slots), then keynote, group work and apéro.
+- Content lives in one file, `config/event.php`; still TBA: final title, CfP text and track scope, exact agenda and times, rooms, extended-abstract format.
+- Programme follows a fixed format: two parallel paper tracks with three paper sessions (two in the morning, one after lunch; 30-minute slots), then a 45-minute panel with all four senior faculty (moderated by Andreas Hein), final remarks and apéro. No keynote and no 1:1 coaching sessions.
 - Submission: no account; resubmitting with the same e-mail creates a new version, the last one counts. Confirmation on screen and by e-mail with a submission ID.
 - Staged go-live: draft banner while `draft: true`; the form stays closed until the privacy office approves (`privacy.approved`).
 - A static preview without the form is shared for feedback.
@@ -37,7 +37,7 @@ A small, in-person seminar where every accepted paper gets focused feedback from
 - Deadline is enforced by the server in Europe/Zurich time, not the browser.
 - PDF only, max. 10 MB.
 - The repository is public: no internal or personal information in tracked files.
-- Undecided: submission type (full paper vs. extended abstract) and page limit, deadline, notification date, listener-only registration.
+- Undecided: extended-abstract format and structure, time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
 
 ## Brand Commitments
 
