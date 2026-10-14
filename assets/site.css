@@ -432,6 +432,8 @@ input, textarea, button { font: inherit; color: inherit; }
 @media (max-width: 1023px) {
   :root { --gutter: 24px; --section: 88px; }
   .hero__copy, .hero__tile { grid-column: 1 / -1; }
+  /* Stacked: the data field (fx/field.js) gets its own room between the copy and the tile. */
+  .hero__grid { row-gap: clamp(96px, 16vw, 144px); }
   .hero__tile { max-width: 560px; }
   .shead h2, .shead__fact { grid-column: 1 / -1; }
   .split__main, .split__side { grid-column: 1 / -1; }
@@ -453,8 +455,8 @@ input, textarea, button { font: inherit; color: inherit; }
   .hero { padding-block: 16px 64px; }
   .hero__when { margin-top: 16px; font-size: 18px; }
   .hero__statement { margin-top: 20px; }
-  .hero__links { margin-top: 16px; gap: 4px 24px; }
-  .hero__grid { row-gap: 24px; }
+  .hero__links { display: none; } /* the menu has the same links; the room goes to the data field */
+  .hero__grid { row-gap: 96px; }
   .tile { padding: calc(var(--cut) + 20px) 20px 20px; }
   .tile__label { font-size: 18px; }
   .tile__day { margin-top: 16px; font-size: 20px; }
