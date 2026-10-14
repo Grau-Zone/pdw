@@ -431,9 +431,9 @@
     function countFor(w) {
         var c;
         if (w < 720) {
-            c = 160 * clamp(w / 390, 0.8, 1.25);
+            c = 240 * clamp(w / 390, 0.8, 1.25);
         } else if (w < 1024) {
-            c = 320 * clamp(w / 834, 0.9, 1.15);
+            c = 400 * clamp(w / 834, 0.9, 1.15);
         } else {
             c = 520 * clamp(w / 1440, 0.85, 1.3);
         }
@@ -618,7 +618,9 @@
         uy = m / len;
         nx = m / len;   // normal pointing up (and slightly left)
         ny = -1 / len;
-        band = clamp(w * BAND_K, BAND_MIN, BAND_MAX);
+        // Stacked layouts (below 1024px) give the ribbon its own gap above the tile, so it may be
+        // thicker there than the width-based value; the CSS reserves that room (.hero__grid row-gap).
+        band = w < 1024 ? clamp(w * 0.16, 56, 96) : clamp(w * BAND_K, BAND_MIN, BAND_MAX);
         K = Math.max(3, Math.round(band / clamp(band / 8, GAP_MIN, GAP_MAX)));
         KB = Math.max(2, Math.round(K * 0.5));
         gap = band / K;
