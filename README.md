@@ -201,7 +201,8 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 **Einreichung**
 
 - [x] Art: Extended Abstract (Feedback 13.10.2026)
-- [ ] Format und Struktur des Extended Abstract, Pflichtfelder
+- [x] Struktur des Extended Abstract: Emerald-Vorlage wie beim WISIC (Leon, 14.10.)
+- [ ] Länge des Extended Abstract, Pflichtfelder
 - [x] Deadline Do 5.11.2026 (Uhrzeit 23:59 Zürich als Annahme), Zu- und Absagen am 12.11.2026
 - [ ] Uhrzeit der Deadline bestätigen, Kulanz ja oder nein
 - [ ] Anmeldung nur zum Zuhören (noch nicht gebaut)?

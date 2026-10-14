@@ -14,7 +14,7 @@ Secondary audiences: senior faculty checking the programme, and the organisers w
 
 ## Product Purpose
 
-Landing page and paper submission for a one-day paper development workshop (PDW) for doctoral students at HSG, Thursday 3 December 2026, St.Gallen, in two tracks: Data Platforms and Ecosystems (chairs Jan Marco Leimeister, Andreas Hein) and Data Governance (chairs Christine Legner, Aleksi Aaltonen). Submissions are extended abstracts; deadline 5 November 2026, notification 12 November 2026.
+Landing page and paper submission for a one-day paper development workshop (PDW) for doctoral students at HSG, Thursday 3 December 2026, St.Gallen, in two tracks: Data Platforms and Ecosystems (chairs Jan Marco Leimeister, Andreas Hein) and Data Governance (chairs Christine Legner, Aleksi Aaltonen). Submissions are extended abstracts structured with the Emerald template (Purpose, Design/methodology/approach, Findings, Limitations/implications, Practical implications, Originality); deadline 5 November 2026, notification 12 November 2026.
 
 Success means enough fitting submissions to fill the paper slots in the two parallel tracks, each submitted correctly and before the deadline, with no lost or duplicated papers.
 
@@ -37,7 +37,7 @@ A small, in-person workshop where every accepted paper gets focused feedback fro
 - Deadline is enforced by the server in Europe/Zurich time, not the browser.
 - PDF only, max. 10 MB.
 - The repository is public: no internal or personal information in tracked files.
-- Undecided: extended-abstract format and structure, time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
+- Undecided: extended-abstract length, time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
 
 ## Brand Commitments
 

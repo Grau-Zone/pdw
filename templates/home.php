@@ -80,6 +80,14 @@ $tracks = $event['tracks'];
                         <li><?= e($item) ?></li>
                     <?php endforeach; ?>
                 </ul>
+                <?php if (!empty($sub['abstract_template']['sections'])): ?>
+                    <h3 class="subhead mt-4">Extended abstract: <?= e($sub['abstract_template']['name']) ?></h3>
+                    <dl class="index index--stack">
+                        <?php foreach ($sub['abstract_template']['sections'] as $heading => $hint): ?>
+                            <div><dt><?= e($heading) ?></dt><dd><?= e($hint) ?></dd></div>
+                        <?php endforeach; ?>
+                    </dl>
+                <?php endif; ?>
             </div>
         </div>
     </div>

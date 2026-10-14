@@ -49,10 +49,23 @@ return [
         'grace_minutes' => 5,
         'notification_date' => '2026-11-12',                    // confirmed (feedback 13 Oct)
         'max_file_mb' => 10,
-        'what_to_submit' => [                                   // TBA – format and structure of the extended abstract, anonymised?
-            'An extended abstract (format and structure: [TBA]).',
+        'what_to_submit' => [                                   // TBA – length of the extended abstract, anonymised?
+            'An extended abstract structured with the Emerald template (headings below; length: [TBA]).',
             'One PDF file per submission, max. 10 MB.',
             'Non-archival: there are no proceedings. Papers under review elsewhere are welcome.',
+        ],
+        // Required structure of the extended abstract: the Emerald structured abstract, as at WISIC
+        // (Leon, 14 Oct). Heading => short guiding question (our own wording).
+        'abstract_template' => [
+            'name' => 'Emerald template',
+            'sections' => [
+                'Purpose' => 'Why this research? Its aims and core research questions.',
+                'Design/methodology/approach' => 'How the aims are achieved: the main methods, the approach and the theoretical scope.',
+                'Findings/results so far' => 'What you have found so far, from analysis, discussion or results.',
+                'Research limitations/implications so far' => 'Known limitations and suggestions for future research.',
+                'Practical implications' => 'What the research means for practice and what should change.',
+                'Originality' => 'What is new: the contribution of the paper and for whom it matters.',
+            ],
         ],
         'abstract_required' => true,
         'abstract_max_chars' => 2000,

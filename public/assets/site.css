@@ -254,6 +254,10 @@ input, textarea, button { font: inherit; color: inherit; }
 .index { padding: 0; list-style: none; border-top: 1px solid var(--rule); }
 .index > li, .index > div { display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
 .index--plain > li { grid-template-columns: 1fr; }
+/* Heading over its explanation, e.g. the sections of the extended abstract. */
+.index--stack > div { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+.index--stack dt { font-weight: 600; }
+.index--stack dd { color: var(--meta); font-size: 16px; }
 .index__key { padding-top: 3px; color: var(--meta); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 .index dd { margin: 0; overflow-wrap: anywhere; }
 
