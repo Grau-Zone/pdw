@@ -5,7 +5,8 @@ declare(strict_types=1);
 /*
  * Static preview for people without PHP (e.g. to send to Leon for feedback):
  * renders the public pages to plain HTML that opens with a double-click.
- * The form does nothing in the preview.
+ * In form mode the submit button is disabled; in e-mail mode the mailto link stays live
+ * (the banner asks not to submit while the content is a draft).
  *   php bin/export-preview.php                                    ->  export/workshop-vorschau.zip
  *   php bin/export-preview.php https://grau-zone.github.io/pdw/   (address where the preview is published)
  */
@@ -57,10 +58,13 @@ foreach ($pages as $file => [$template, $vars]) {
         $html = str_replace(e($app->absoluteUrl('/')), e($publicUrl), $html);
     }
 
-    // The preview cannot submit anything – say so and disable the button.
+    // The preview cannot submit anything through a form – say so and disable the button.
+    // With e-mail submissions there is no form; the banner only marks the draft.
     $html = str_replace(
         'Draft · content not final · please do not submit real papers yet',
-        'Preview · draft content · the form does not work in this preview',
+        $app->submissionsByEmail()
+            ? 'Preview · draft content · please do not submit yet'
+            : 'Preview · draft content · the form does not work in this preview',
         $html
     );
     // Robust against extra attributes on the button (e.g. data-magnetic for the effects).

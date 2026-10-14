@@ -320,6 +320,8 @@ input, textarea, button { font: inherit; color: inherit; }
 .submit-grid__form { grid-column: 1 / span 8; }
 
 .panel { padding: 40px; background: #fff; color: var(--ink); }
+/* E-mail submission: the address is the action, set large. */
+.mailbox { margin-top: 8px; font-size: clamp(26px, 2.8vw, 40px); font-weight: 300; line-height: 1.15; overflow-wrap: anywhere; } /* "Name" role of the type ramp */
 .panel :focus-visible { outline-color: var(--green); }
 .form > * + * { margin-top: 24px; }
 .form__intro { font-size: 18px; }

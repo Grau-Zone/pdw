@@ -71,7 +71,24 @@ $paperIds = 'hint-paper paper-check' . (isset($errors['paper']) ? ' err-paper' :
 ?>
 <div class="grid submit-grid">
     <div class="submit-grid__form panel">
-        <?php if (!$showForm): ?>
+        <?php if ($app->submissionsByEmail() && $state === DeadlineGate::OPEN): ?>
+            <?php $mailto = $app->submissionMailto(); $address = (string) $event['submission']['email']; ?>
+            <p class="form__intro">Send your extended abstract by e-mail to</p>
+            <p class="mailbox"><a href="<?= e($mailto) ?>"><?= e($address) ?></a></p>
+            <div class="actions mt-3">
+                <a class="btn btn--primary" href="<?= e($mailto) ?>" data-magnetic>Write the e-mail<?= icon('arrow') ?></a>
+            </div>
+            <dl class="index mt-4">
+                <div><dt class="index__key">Deadline</dt><dd><?= e(Dates::withZone($deadline)) ?></dd></div>
+                <div><dt class="index__key">Attachment</dt><dd>One PDF file<?= !empty($event['submission']['abstract_template']['name']) ? ', structured with the ' . e($event['submission']['abstract_template']['name']) : '' ?> (see “What to submit” above)</dd></div>
+                <?php if (($event['submission']['email_subject'] ?? '') !== ''): ?>
+                    <div><dt class="index__key">Subject</dt><dd><?= e($event['submission']['email_subject']) ?></dd></div>
+                <?php endif; ?>
+                <div><dt class="index__key">In the e-mail</dt><dd>Your name and affiliation, the paper title and co-authors, your preferred track, and whether your name, affiliation and paper title may be listed in the public programme if the paper is accepted.</dd></div>
+                <div><dt class="index__key">Changes</dt><dd>To update your extended abstract before the deadline, simply send it again; the latest e-mail counts.</dd></div>
+            </dl>
+            <p class="small mt-3">By sending your extended abstract you agree that it is shared confidentially with the workshop faculty and participants, for the purpose of the workshop only. See the <a href="<?= e($app->url('/privacy.php')) ?>">privacy notice</a>.</p>
+        <?php elseif (!$showForm || $app->submissionsByEmail()): ?>
             <div class="note note--warn">
                 <?= $view->render('partials/icon', ['name' => 'warn']) ?>
                 <div>

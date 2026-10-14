@@ -45,11 +45,20 @@ foreach (['fileinfo', 'mbstring', 'pdo_sqlite', 'zip', 'openssl'] as $ext) {
 }
 $report(extension_loaded('intl'), 'extension intl (nicer file names, optional)', true);
 
+// With e-mail submissions the website accepts no uploads: the upload and admin checks only warn.
+$byEmail = $app->submissionsByEmail();
+
+echo "\nSubmission method\n";
+$report(in_array($event['submission']['method'] ?? 'form', ['email', 'form'], true), "submission.method is 'email' or 'form'");
+if ($byEmail) {
+    $report($app->submissionEmailValid(), 'submission.email is a valid address (no spaces)');
+}
+
 echo "\nUpload limits (from public/.user.ini – the web server uses these)\n";
 $ini = @parse_ini_file($app->root . '/public/.user.ini') ?: [];
 $maxFile = (int) round((float) $event['submission']['max_file_mb'] * 1048576);
-$report(isset($ini['upload_max_filesize']) && $bytes((string) $ini['upload_max_filesize']) > $maxFile, 'upload_max_filesize above max_file_mb');
-$report(isset($ini['post_max_size']) && $bytes((string) $ini['post_max_size']) > $bytes((string) ($ini['upload_max_filesize'] ?? '0')), 'post_max_size above upload_max_filesize');
+$report(isset($ini['upload_max_filesize']) && $bytes((string) $ini['upload_max_filesize']) > $maxFile, 'upload_max_filesize above max_file_mb', $byEmail);
+$report(isset($ini['post_max_size']) && $bytes((string) $ini['post_max_size']) > $bytes((string) ($ini['upload_max_filesize'] ?? '0')), 'post_max_size above upload_max_filesize', $byEmail);
 
 echo "\nStorage\n";
 foreach (['uploads', 'db', 'logs', 'sessions', 'tmp'] as $dir) {
@@ -65,7 +74,7 @@ $report($storage !== false && $public !== false && !str_starts_with($storage, $p
 
 echo "\nSecrets and mail\n";
 $report(strlen((string) ($env['app_secret'] ?? '')) >= 32, 'app_secret set (32+ characters)');
-$report(!empty($env['admins']), 'at least one admin account');
+$report(!empty($env['admins']), 'at least one admin account', $byEmail);
 $transport = $env['mail']['transport'] ?? 'log';
 $report($transport === 'smtp', "mail transport is '$transport'", true);
 if ($transport === 'smtp') {

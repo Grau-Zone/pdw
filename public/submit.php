@@ -8,7 +8,8 @@ use Workshop\Text;
 /** @var Workshop\App $app */
 $app = require dirname(__DIR__) . '/src/bootstrap.php';
 
-if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
+// Without a POST, or while submissions go by e-mail (no upload form), show the instructions.
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST' || $app->submissionsByEmail()) {
     $app->redirect('/#submit');
 }
 

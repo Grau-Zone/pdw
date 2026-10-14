@@ -126,8 +126,11 @@ $check = static function (string $name, bool $ok, string $detail = '') use (&$ch
     echo ($ok ? '  ok    ' : '  FAIL  ') . $name . ($ok || $detail === '' ? '' : "\n        $detail") . "\n";
 };
 
+// The upload form is one of two submission methods; these checks run it explicitly.
+const FORM = ['method' => 'form'];
+
 // ------------------------------------------------------------------ open
-$config = make_config($root);
+$config = make_config($root, [], FORM);
 [$server, $base] = start_server($root, $config);
 $storage = "$config/storage";
 
@@ -207,7 +210,7 @@ try {
 }
 
 // ---------------------------------------------------------------- closed
-$config = make_config($root, [], ['deadline' => '2020-01-01 00:00']);
+$config = make_config($root, [], ['deadline' => '2020-01-01 00:00'] + FORM);
 [$server, $base] = start_server($root, $config);
 try {
     $check('after the deadline the page says so', str_contains(http('GET', "$base/")['body'], 'deadline has passed'));
@@ -218,11 +221,50 @@ try {
 }
 
 // ------------------------------------- live site without approved privacy texts
-$config = make_config($root, ['draft' => false]);
+$config = make_config($root, ['draft' => false], FORM);
 [$server, $base] = start_server($root, $config);
 try {
     $check('live site without approval shows no form', !str_contains(http('GET', "$base/")['body'], 'data-submission'));
     $check('live site without approval refuses submissions', http('POST', "$base/submit.php", submission())['status'] === 403);
+} finally {
+    proc_terminate($server);
+}
+
+// ------------------------------------------------- submissions by e-mail
+$config = make_config($root, [], ['method' => 'email', 'email' => 'submit@example.org', 'email_subject' => 'PDW test']);
+[$server, $base] = start_server($root, $config);
+try {
+    $home = http('GET', "$base/")['body'];
+    $check('e-mail mode shows the mailto link instead of the form', str_contains($home, 'href="mailto:submit@example.org?subject=PDW%20test"') && !str_contains($home, 'data-submission'));
+    $post = http('POST', "$base/submit.php", submission());
+    $check('e-mail mode stores no upload', $post['status'] === 303 && count(glob("$config/storage/uploads/*.pdf") ?: []) === 0, "status {$post['status']}");
+    $check('e-mail mode privacy text has no rate-limit note', !str_contains(http('GET', "$base/privacy.php")['body'], 'per network address'));
+} finally {
+    proc_terminate($server);
+}
+
+$config = make_config($root, [], ['method' => 'email', 'email' => 'submit@example.org', 'deadline' => '2020-01-01 00:00']);
+[$server, $base] = start_server($root, $config);
+try {
+    $home = http('GET', "$base/")['body'];
+    $check('e-mail mode after the deadline: closed, no mailto', str_contains($home, 'deadline has passed') && !str_contains($home, 'mailto:submit@example.org'));
+} finally {
+    proc_terminate($server);
+}
+
+$config = make_config($root, [], ['method' => 'email', 'email' => 'submit@example ']);
+[$server, $base] = start_server($root, $config);
+try {
+    $home = http('GET', "$base/")['body'];
+    $check('a broken submission address shows neither the form nor a mailto', !str_contains($home, 'data-submission') && !str_contains($home, 'mailto:submit@'));
+} finally {
+    proc_terminate($server);
+}
+
+$config = make_config($root, ['draft' => false], ['method' => 'email', 'email' => 'submit@example.org']);
+[$server, $base] = start_server($root, $config);
+try {
+    $check('e-mail mode on the live site waits for approved privacy texts', !str_contains(http('GET', "$base/")['body'], 'mailto:submit@example.org'));
 } finally {
     proc_terminate($server);
 }

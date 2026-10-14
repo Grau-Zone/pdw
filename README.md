@@ -88,6 +88,13 @@ tests/               Einzeltests + End-to-End-Test
 
 ## Wie die Einreichung funktioniert
 
+> **Seit 14.10.2026 per E-Mail:** Die Extended Abstracts werden nicht hochgeladen, sondern per E-Mail an `submission.email` geschickt (aktuell adrian.bohrer@unisg.ch).
+> - `config/event.php` steht dazu auf `submission.method = 'email'`.
+> - Die Seite zeigt dann statt des Formulars eine Anleitung: Adresse, Knopf mit vorausgefülltem Betreff, Deadline, Anhang, Inhalt der Mail und Hinweis zur Weitergabe an die Faculty.
+> - `submit.php` leitet nur noch auf diese Anleitung weiter und speichert nichts.
+> - Die Deadline-Kachel und der Status (offen/geschlossen) funktionieren wie bisher. Die Datenschutzerklärung passt sich an.
+> - Der Upload-Weg unten bleibt im Code und lässt sich mit `method = 'form'` wieder einschalten.
+
 - **Deadline:** Der Server prüft sie in `Europe/Zurich`, nicht der Browser.
   - „23:59“ gilt bis 23:59:59.
   - Ab dem 25.10. gilt Winterzeit. Die Seite zeigt deshalb „Zurich time (CET, UTC+01:00)“ an.
@@ -155,6 +162,11 @@ tests/               Einzeltests + End-to-End-Test
 
 ## Nach dem Event
 
+**Bei Einreichung per E-Mail (aktuell):** `purge.php` erreicht die Mails nicht. Von Hand löschen:
+- alle Einreichungs-Mails und Anhänge im Postfach (auch „Gesendet“ und „Gelöschte Elemente“);
+- die an die Faculty weitergeleiteten Kopien: die Faculty bitten, sie zu löschen;
+- lokale Downloads.
+
 Zuerst ohne Löschen schauen, was betroffen wäre:
 
 ```bash
@@ -196,7 +208,7 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
   - Aufteilung der 30 Minuten pro Paper in Präsentation und Feedback
   - Ort des Mittagessens
   - Slots in `config/event.php` an das finale Programm anpassen
-  - Nach der Auswahl Namen und Titel in `config/event.php` eintragen, nur mit Einwilligung ins öffentliche Programm (Häkchen beim Einreichen)
+  - Nach der Auswahl Namen und Titel in `config/event.php` eintragen, nur mit Einwilligung ins öffentliche Programm (in der Einreichungs-Mail erfragt; im Formular-Modus per Häkchen)
 
 **Einreichung**
 
@@ -210,9 +222,10 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 
 **Personen und Mail**
 
-- [ ] Funktionsmailbox für Kontakt und Reply-To (keine persönliche Adresse), Vertretung mit Admin-Zugang
+- [x] Einreichung per E-Mail an adrian.bohrer@unisg.ch (persönliche Adresse, Entscheid 14.10.2026)
+- [ ] Funktionsmailbox für Kontakt (`contact.email` ist noch ein Platzhalter), Vertretung
 - [ ] Empfänger der Orga-Benachrichtigungen, Admin-Accounts
-- [ ] Wie gehen die Paper an die Faculty (ZIP aus dem Admin-Bereich)?
+- [ ] Wie gehen die Paper an die Faculty? Bei E-Mail-Einreichung per Weiterleitung oder als Sammel-ZIP von Hand.
 
 **Recht**
 

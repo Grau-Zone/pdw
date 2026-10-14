@@ -352,7 +352,7 @@ Ink text at 18px with a 1px ink underline border and a trailing arrow; hover tur
 
 ### Cards / Containers
 There are no cards. Lists of facts, dates, sessions, tracks and people are **index rows**: full-width rows divided by 1px hairlines, with an optional fixed key column (140px for definition keys, 180px for agenda times). On hover a 2px line sweeps along the row's bottom edge (green; mint on faculty) and the first cell moves 6px right.
-- **Form panel:** white, 40px padding (20px 16px on mobile), sitting on the green submit band.
+- **Form panel:** white, 40px padding (20px 16px on mobile), sitting on the green submit band. In e-mail mode it holds the instructions instead: the address set large (`.mailbox`, light 300, clamp 24–40px, green link), a primary "Write the e-mail" button and an index of deadline, attachment, subject and e-mail contents.
 - **Receipt:** HSG green block, 32px 40px padding, with the submission ID set as a large light figure.
 - **Notes:** 1px grey border on white with a 20px stroked icon; success uses a green border, warning a beige fill, error a 2px red border. No coloured side stripes.
 

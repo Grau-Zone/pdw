@@ -80,8 +80,39 @@ final class App
     public function submissionsSwitchedOn(): bool
     {
         // Strict true: a typo like 'false' (a string) must not open the form.
-        return ($this->event['submission']['enabled'] ?? false) === true
-            && (($this->event['draft'] ?? false) === true || ($this->event['privacy']['approved'] ?? false) === true);
+        $enabled = ($this->event['submission']['enabled'] ?? false) === true;
+        // In both modes personal data is processed, so the live site waits for the approved privacy texts.
+        $approved = ($this->event['draft'] ?? false) === true || ($this->event['privacy']['approved'] ?? false) === true;
+        // A broken submission address keeps submissions closed instead of falling back to the upload form.
+        $addressOk = !$this->submissionsByEmail() || $this->submissionEmailValid();
+
+        return $enabled && $approved && $addressOk;
+    }
+
+    /** Authors send their PDF by e-mail instead of using the upload form (submission.method = 'email'). */
+    public function submissionsByEmail(): bool
+    {
+        return ($this->event['submission']['method'] ?? 'form') === 'email';
+    }
+
+    public function submissionEmailValid(): bool
+    {
+        $email = (string) ($this->event['submission']['email'] ?? '');
+
+        return $email === trim($email) && filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+    }
+
+    /** mailto: link for e-mail submissions, with the subject line pre-filled. */
+    public function submissionMailto(): string
+    {
+        $sub = $this->event['submission'];
+        // URL-encoded so that "?" or "&" in the address or subject cannot add header fields.
+        $href = 'mailto:' . str_replace('%40', '@', rawurlencode((string) $sub['email']));
+        if (($sub['email_subject'] ?? '') !== '') {
+            $href .= '?subject=' . rawurlencode((string) $sub['email_subject']);
+        }
+
+        return $href;
     }
 
     public function gate(): DeadlineGate

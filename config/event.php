@@ -39,7 +39,13 @@ return [
     ],
 
     'submission' => [
-        // Master switch. On the live site the form additionally needs privacy.approved = true.
+        // How extended abstracts are submitted (14 Oct): 'email' = authors send the PDF to
+        // 'email' below and the page shows instructions instead of the upload form;
+        // 'form' = the upload form with server-side checks, admin area and confirmation mails.
+        'method' => 'email',
+        'email' => 'adrian.bohrer@unisg.ch',
+        'email_subject' => 'PDW 2026 - extended abstract',     // ASCII only: some mail clients garble non-ASCII mailto subjects
+        // Master switch. In form mode the live site additionally needs privacy.approved = true.
         'enabled' => true,
         'opens_at' => null,                                     // optional, e.g. '2026-10-14 12:00'
         'deadline' => '2026-11-05 23:59',                       // date confirmed (feedback 13 Oct); 23:59 is our default – shown as "23:59 Zurich time (CET, UTC+01:00)"
@@ -49,9 +55,8 @@ return [
         'grace_minutes' => 5,
         'notification_date' => '2026-11-12',                    // confirmed (feedback 13 Oct)
         'max_file_mb' => 10,
-        'what_to_submit' => [                                   // length 2 pages (Leon, 14 Oct); TBA – anonymised?
+        'what_to_submit' => [                                   // length 2 pages (Leon, 14 Oct); TBA – anonymised? The delivery line (e-mail or upload) is added by templates/home.php.
             'An extended abstract of max. 2 pages, structured with the Emerald template (headings below).',
-            'One PDF file per submission, max. 10 MB.',
             'Non-archival: there are no proceedings. Papers under review elsewhere are welcome.',
         ],
         // Required structure of the extended abstract: the Emerald structured abstract, as at WISIC

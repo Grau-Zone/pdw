@@ -10,7 +10,7 @@ web
 
 Doctoral students in information systems and data studies, from the University of St.Gallen (HSG) and from other universities. They arrive from a call for papers, decide whether the workshop fits their paper, and then submit an extended abstract as a PDF before the deadline. Many will read on a phone first and submit later from a laptop.
 
-Secondary audiences: senior faculty checking the programme, and the organisers working in the admin area.
+Secondary audiences: senior faculty checking the programme, and the organisers handling the submissions (by e-mail; in form mode in the admin area).
 
 ## Product Purpose
 
@@ -24,20 +24,20 @@ A small, in-person workshop where every accepted paper gets focused feedback fro
 
 ## Operating Context
 
-- Content lives in one file, `config/event.php`; still TBA: final title, CfP text and track scope, exact agenda and times, rooms, extended-abstract format.
+- Content lives in one file, `config/event.php`; still TBA: final title, CfP text and track scope, exact agenda and times, rooms.
 - Programme follows a fixed format: two parallel paper tracks with three paper sessions (two in the morning, one after lunch; 30-minute slots), then a 45-minute panel with all four senior faculty (moderated by Andreas Hein), final remarks and apéro. No keynote and no 1:1 coaching sessions.
-- Submission: no account; resubmitting with the same e-mail creates a new version, the last one counts. Confirmation on screen and by e-mail with a submission ID.
+- Submission (since 14 Oct 2026): authors send the extended abstract as a PDF by e-mail to the address in `submission.email`; the page shows instructions instead of an upload form (`submission.method = 'email'`). The upload form with versions, confirmation IDs and admin export stays in the code (`method = 'form'`).
 - Staged go-live: draft banner while `draft: true`; the form stays closed until the privacy office approves (`privacy.approved`).
-- A static preview without the form is shared for feedback.
+- A static preview is shared for feedback (in form mode without a working form).
 
 ## Capabilities and Constraints
 
 - PHP 8.2+, SQLite, PHPMailer, no framework; plain CSS and a small progressive-enhancement script.
 - Strict Content-Security-Policy: no inline styles or scripts, no third-party domains.
 - Deadline is enforced by the server in Europe/Zurich time, not the browser.
-- PDF only, max. 10 MB.
+- PDF only (form mode: max. 10 MB, checked by the server).
 - The repository is public: no internal or personal information in tracked files.
-- Extended abstracts are max. 2 pages. Undecided: time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
+- Extended abstracts are max. 2 pages. Undecided: time of the deadline (23:59 assumed), listener-only registration. The preferred track is asked for in the submission e-mail.
 
 ## Brand Commitments
 

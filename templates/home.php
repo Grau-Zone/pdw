@@ -75,8 +75,15 @@ $tracks = $event['tracks'];
             </div>
             <div class="split__side">
                 <h3 class="subhead">What to submit</h3>
+                <?php
+                // How the PDF reaches us depends on the submission method (e-mail or upload form).
+                $whatToSubmit = $sub['what_to_submit'];
+                array_splice($whatToSubmit, 1, 0, [$app->submissionsByEmail()
+                    ? 'One PDF file, sent by e-mail (see “Submit your paper” below).'
+                    : 'One PDF file per submission, max. ' . $sub['max_file_mb'] . ' MB.']);
+                ?>
                 <ul class="index index--plain">
-                    <?php foreach ($sub['what_to_submit'] as $item): ?>
+                    <?php foreach ($whatToSubmit as $item): ?>
                         <li><?= e($item) ?></li>
                     <?php endforeach; ?>
                 </ul>
@@ -186,7 +193,7 @@ $tracks = $event['tracks'];
     <div class="wrap">
         <div class="grid shead">
             <h2 id="submit-title">Submit your paper</h2>
-            <p class="shead__fact">No account needed.</p>
+            <p class="shead__fact"><?= $app->submissionsByEmail() ? 'By e-mail, as one PDF.' : 'No account needed.' ?></p>
         </div>
         <?= $view->render('partials/submission', ['values' => [], 'errors' => [], 'compact' => true]) ?>
     </div>
