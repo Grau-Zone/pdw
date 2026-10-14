@@ -44,8 +44,11 @@ foreach ($pages as $file => [$template, $vars]) {
     // Site-absolute links become relative so the files work from any folder.
     $html = (string) preg_replace_callback('/\b(href|src|action)="\/([^"]*)"/', static function (array $m) use ($links): string {
         [$path, $fragment] = array_pad(explode('#', $m[2], 2), 2, null);
+        // Keep the "?v=<mtime>" of assets: GitHub Pages lets browsers cache files for 10 minutes,
+        // and without the version a new CSS or JS file would not load right after a push.
+        $query = str_starts_with((string) $path, 'assets/') && preg_match('/\?v=\d+$/', (string) $path, $q) ? $q[0] : '';
         $path = (string) preg_replace('/\?.*$/', '', (string) $path);
-        $target = $path === '' ? 'index.html' : ($links[$path] ?? $path);
+        $target = $path === '' ? 'index.html' : ($links[$path] ?? $path) . $query;
         if ($fragment !== null) {
             $target = ($path === '' && $m[1] !== 'href' ? '' : $target) . '#' . $fragment;
         }
