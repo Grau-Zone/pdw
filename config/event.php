@@ -49,8 +49,8 @@ return [
         'grace_minutes' => 5,
         'notification_date' => '2026-11-12',                    // confirmed (feedback 13 Oct)
         'max_file_mb' => 10,
-        'what_to_submit' => [                                   // TBA – length of the extended abstract, anonymised?
-            'An extended abstract structured with the Emerald template (headings below; length: [TBA]).',
+        'what_to_submit' => [                                   // length 2 pages (Leon, 14 Oct); TBA – anonymised?
+            'An extended abstract of max. 2 pages, structured with the Emerald template (headings below).',
             'One PDF file per submission, max. 10 MB.',
             'Non-archival: there are no proceedings. Papers under review elsewhere are welcome.',
         ],

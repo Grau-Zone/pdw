@@ -37,7 +37,7 @@ A small, in-person workshop where every accepted paper gets focused feedback fro
 - Deadline is enforced by the server in Europe/Zurich time, not the browser.
 - PDF only, max. 10 MB.
 - The repository is public: no internal or personal information in tracked files.
-- Undecided: extended-abstract length, time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
+- Extended abstracts are max. 2 pages. Undecided: time of the deadline (23:59 assumed), listener-only registration, track choice in the form.
 
 ## Brand Commitments
 
