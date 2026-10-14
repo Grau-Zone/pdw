@@ -55,6 +55,8 @@
     var GAP_MIN = 5.5;              // lane pitch, px (about band / 8)
     var GAP_MAX = 9;
     var LANE_DECAY = 3;             // lane k gets weight exp(-k / LANE_DECAY): halftone falloff
+    var LANE_DECAY_NARROW = 5.5;    // … slower falloff below 1024px, where the ribbon is taller
+    var laneDecay = LANE_DECAY;
     var DUST = 0.1;                 // share of free points between the lanes
     var LOOSEN = 0.3;               // lanes spread by up to this share away from the tile
     var SCATTER = 1.3;              // perpendicular scatter (in lane pitches) away from the tile
@@ -431,9 +433,9 @@
     function countFor(w) {
         var c;
         if (w < 720) {
-            c = 240 * clamp(w / 390, 0.8, 1.25);
+            c = 320 * clamp(w / 390, 0.8, 1.25);
         } else if (w < 1024) {
-            c = 400 * clamp(w / 834, 0.9, 1.15);
+            c = 520 * clamp(w / 834, 0.9, 1.15);
         } else {
             c = 520 * clamp(w / 1440, 0.85, 1.3);
         }
@@ -446,7 +448,7 @@
     /* ── Spawning ─────────────────────────────────────────────────────── */
 
     function laneWeight(k) {
-        return k >= 0 ? Math.exp(-k / LANE_DECAY) : 0.5 * Math.exp(k / 2);
+        return k >= 0 ? Math.exp(-k / laneDecay) : 0.5 * Math.exp(k / 2);
     }
 
     function pickLane() {
@@ -620,8 +622,15 @@
         ny = -1 / len;
         // Stacked layouts (below 1024px) give the ribbon its own gap above the tile, so it may be
         // thicker there than the width-based value; the CSS reserves that room (.hero__grid row-gap).
-        band = w < 1024 ? clamp(w * 0.16, 56, 96) : clamp(w * BAND_K, BAND_MIN, BAND_MAX);
-        K = Math.max(3, Math.round(band / clamp(band / 8, GAP_MIN, GAP_MAX)));
+        if (w < 1024) {
+            band = clamp(w * 0.36, 130, 220);
+            K = Math.max(3, Math.round(band / clamp(band / 8, GAP_MIN, 22)));
+            laneDecay = LANE_DECAY_NARROW;
+        } else {
+            band = clamp(w * BAND_K, BAND_MIN, BAND_MAX);
+            K = Math.max(3, Math.round(band / clamp(band / 8, GAP_MIN, GAP_MAX)));
+            laneDecay = LANE_DECAY;
+        }
         KB = Math.max(2, Math.round(K * 0.5));
         gap = band / K;
         cFall = Math.max(220, w * 0.3);
