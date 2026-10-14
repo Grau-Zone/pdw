@@ -5,8 +5,8 @@ declare(strict_types=1);
 /*
  * Static preview for people without PHP (e.g. to send to Leon for feedback):
  * renders the public pages to plain HTML that opens with a double-click.
- * In form mode the submit button is disabled; in e-mail mode the mailto link stays live
- * (the banner asks not to submit while the content is a draft).
+ * In form mode the submit button is disabled and a banner says so; in e-mail mode the
+ * export is the public site: no draft banner and a working mailto link.
  *   php bin/export-preview.php                                    ->  export/workshop-vorschau.zip
  *   php bin/export-preview.php https://grau-zone.github.io/pdw/   (address where the preview is published)
  */
@@ -58,15 +58,18 @@ foreach ($pages as $file => [$template, $vars]) {
         $html = str_replace(e($app->absoluteUrl('/')), e($publicUrl), $html);
     }
 
-    // The preview cannot submit anything through a form – say so and disable the button.
-    // With e-mail submissions there is no form; the banner only marks the draft.
-    $html = str_replace(
-        'Draft · content not final · please do not submit real papers yet',
-        $app->submissionsByEmail()
-            ? 'Preview · draft content · please do not submit yet'
-            : 'Preview · draft content · the form does not work in this preview',
-        $html
-    );
+    if ($app->submissionsByEmail()) {
+        // With e-mail submissions the exported pages are the public site (online since 14 Oct 2026):
+        // no draft banner, the mailto link works.
+        $html = (string) preg_replace('#<div class="draftbar"[^>]*>.*?</div>\s*#s', '', $html);
+    } else {
+        // The preview cannot submit anything through a form – say so and disable the button.
+        $html = str_replace(
+            'Draft · content not final · please do not submit real papers yet',
+            'Preview · draft content · the form does not work in this preview',
+            $html
+        );
+    }
     // Robust against extra attributes on the button (e.g. data-magnetic for the effects).
     $html = (string) preg_replace('/type="submit"([^>]*)><span data-label>/', 'type="button" disabled$1><span data-label>', $html);
     file_put_contents("$out/$file", $html);

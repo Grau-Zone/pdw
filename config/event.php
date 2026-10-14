@@ -134,8 +134,8 @@ return [
     ],
 
     'contact' => [
-        // A function mailbox, not a personal address.
-        'email' => 'workshop@example.org',                      // TBA
+        // Contact shown in the footer, venue and privacy notice (personal address for now, decision 14 Oct).
+        'email' => 'adrian.bohrer@unisg.ch',                    // same as the submission address (decision 14 Oct)
         'people' => 'Leon Müller (organiser)',                  // TBA
     ],
 
