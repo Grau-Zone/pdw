@@ -25,7 +25,7 @@ return [
         // Second half of the hero statement, shown in grey after the tagline ('' for none).
         'tagline_more' => 'Each accepted paper receives focused feedback from senior faculty in a small group.',
         'date' => '2026-12-03',                                 // confirmed (feedback 13 Oct)
-        'time' => 'Agenda to be announced',                     // exact agenda and times to be announced
+        'time' => '10:00–17:30',                                // start 10:00, apéro from 17:30 (15 Oct)
         'format' => 'In person',                                // TBA – hybrid?
         'fee' => 'Free of charge',                              // TBA
         'language' => 'English',
@@ -84,34 +84,35 @@ return [
      * keynote and no 1:1 coaching sessions (feedback 13 Oct). The former keynote
      * time is used for a third paper session in the afternoon (feedback 14 Oct).
      * kind: 'plenary' (default), 'break' or 'papers' (slots per track id).
-     * DRAFT – the exact agenda, times and rooms are to be announced.
+     * Times (15 Oct): start 10:00, apéro from 17:30, 15-minute coffee breaks and a
+     * 45-minute lunch. Presenters and rooms are to be announced.
      */
-    'programme_note' => 'Provisional outline – the exact agenda and the rooms will be announced. Paper sessions run in two parallel tracks; each paper receives feedback from the track chairs and peers.',
+    'programme_note' => 'The presenters and the rooms will be announced. Paper sessions run in two parallel tracks; each paper receives feedback from the track chairs and peers.',
     'tracks' => [
         't1' => ['name' => 'Track 1: Data Platforms and Ecosystems', 'room' => 'Room TBA', 'chair' => 'Jan Marco Leimeister, Andreas Hein'], // replaces "Data & Digital Sovereignty" (14 Oct)
         't2' => ['name' => 'Track 2: Data Governance', 'room' => 'Room TBA', 'chair' => 'Christine Legner, Aleksi Aaltonen'],
     ],
     'programme' => [
-        ['time' => '08:30', 'end' => '09:00', 'title' => 'Arrival', 'kind' => 'break'],
-        ['time' => '09:00', 'end' => '09:15', 'title' => 'Opening remarks'],
-        ['time' => '09:15', 'end' => '10:45', 'title' => 'Paper sessions I', 'kind' => 'papers', 'slots' => [
-            't1' => [$slot('09:15', '09:45'), $slot('09:45', '10:15'), $slot('10:15', '10:45')],
-            't2' => [$slot('09:15', '09:45'), $slot('09:45', '10:15'), $slot('10:15', '10:45')],
+        ['time' => '10:00', 'end' => '10:30', 'title' => 'Arrival', 'kind' => 'break'],
+        ['time' => '10:30', 'end' => '10:45', 'title' => 'Opening remarks'],
+        ['time' => '10:45', 'end' => '12:15', 'title' => 'Paper sessions I', 'kind' => 'papers', 'slots' => [
+            't1' => [$slot('10:45', '11:15'), $slot('11:15', '11:45'), $slot('11:45', '12:15')],
+            't2' => [$slot('10:45', '11:15'), $slot('11:15', '11:45'), $slot('11:45', '12:15')],
         ]],
-        ['time' => '10:45', 'end' => '11:15', 'title' => 'Coffee break', 'kind' => 'break'],
-        ['time' => '11:15', 'end' => '12:45', 'title' => 'Paper sessions II', 'kind' => 'papers', 'slots' => [
-            't1' => [$slot('11:15', '11:45'), $slot('11:45', '12:15'), $slot('12:15', '12:45')],
-            't2' => [$slot('11:15', '11:45'), $slot('11:45', '12:15'), $slot('12:15', '12:45')],
+        ['time' => '12:15', 'end' => '13:00', 'title' => 'Lunch break', 'kind' => 'break', 'detail' => 'Location TBA'],
+        ['time' => '13:00', 'end' => '14:30', 'title' => 'Paper sessions II', 'kind' => 'papers', 'slots' => [
+            't1' => [$slot('13:00', '13:30'), $slot('13:30', '14:00'), $slot('14:00', '14:30')],
+            't2' => [$slot('13:00', '13:30'), $slot('13:30', '14:00'), $slot('14:00', '14:30')],
         ]],
-        ['time' => '12:45', 'end' => '13:45', 'title' => 'Lunch break', 'kind' => 'break', 'detail' => 'Location TBA'],
-        ['time' => '13:45', 'end' => '15:15', 'title' => 'Paper sessions III', 'kind' => 'papers', 'slots' => [
-            't1' => [$slot('13:45', '14:15'), $slot('14:15', '14:45'), $slot('14:45', '15:15')],
-            't2' => [$slot('13:45', '14:15'), $slot('14:15', '14:45'), $slot('14:45', '15:15')],
+        ['time' => '14:30', 'end' => '14:45', 'title' => 'Coffee break', 'kind' => 'break'],
+        ['time' => '14:45', 'end' => '16:15', 'title' => 'Paper sessions III', 'kind' => 'papers', 'slots' => [
+            't1' => [$slot('14:45', '15:15'), $slot('15:15', '15:45'), $slot('15:45', '16:15')],
+            't2' => [$slot('14:45', '15:15'), $slot('15:15', '15:45'), $slot('15:45', '16:15')],
         ]],
-        ['time' => '15:15', 'end' => '15:30', 'title' => 'Coffee break', 'kind' => 'break'],
-        ['time' => '15:30', 'end' => '16:15', 'title' => 'Panel with the senior faculty', 'detail' => 'Aleksi Aaltonen, Andreas Hein, Christine Legner and Jan Marco Leimeister · moderated by Andreas Hein'],
-        ['time' => '16:15', 'end' => '16:30', 'title' => 'Final remarks'],
-        ['time' => '16:30', 'end' => '', 'title' => 'Apéro and farewell', 'kind' => 'break'],
+        ['time' => '16:15', 'end' => '16:30', 'title' => 'Coffee break', 'kind' => 'break'],
+        ['time' => '16:30', 'end' => '17:15', 'title' => 'Panel with the senior faculty', 'detail' => 'Aleksi Aaltonen, Andreas Hein, Christine Legner and Jan Marco Leimeister · moderated by Andreas Hein'],
+        ['time' => '17:15', 'end' => '17:30', 'title' => 'Final remarks'],
+        ['time' => '17:30', 'end' => '', 'title' => 'Apéro and farewell', 'kind' => 'break'],
     ],
 
     // Senior faculty who attend, alphabetical by surname. 'role' is shown next to the

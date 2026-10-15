@@ -17,7 +17,7 @@ Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist be
   - Solange `submission.deadline_confirmed` in `config/event.php` auf `false` steht, zeigt sie „Provisional“.
 - **Ablage:** Der Ordner `design-radar-gruen/` (alter Look) ist nur Vorlage und wird nicht hochgeladen.
 
-> **Stand 13.10.2026:** Datum, Tracks, Faculty, Deadline, Rückmeldung und Panel sind bestätigt; CfP-Text, Abstract-Format, Räume und genaue Agenda sind noch TBA. Siehe [Offene Punkte](#offene-punkte).
+> **Stand 15.10.2026:** Datum, Tracks, Faculty, Deadline, Rückmeldung, Panel, Abstract-Format und Uhrzeiten (10:00 bis Apéro um 17:30) sind bestätigt; CfP-Text, Räume und die Paper im Programm sind noch TBA. Siehe [Offene Punkte](#offene-punkte).
 
 ## Schnellstart lokal
 
@@ -201,9 +201,10 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 - [x] Format und Datum: eintägiger Paper Development Workshop am Do 3.12.2026 (Feedback 13.10.2026)
 - [x] Zwei Tracks: Track 1 „Data Platforms and Ecosystems“ (Leimeister, Hein; ersetzt „Data & Digital Sovereignty“, 14.10.), Track 2 „Data Governance“ (Legner, Aaltonen)
 - [x] Keine Keynote und keine 1:1-Coachings; Panel (45 Min.) mit allen vier Faculty, moderiert von Andreas Hein; dritter Paper-Block am Nachmittag (14.10.)
-- [ ] Endgültiger Titel (aktuell „Paper Development Workshop on Data Studies“), Uhrzeiten, Raum (Raumantrag beim Events Office), hybrid ja oder nein, Kosten
+- [x] Uhrzeiten: Beginn 10:00 (Ankunft, Opening 10:30), Apéro ab 17:30, Kaffeepausen 15 Min., Mittag 45 Min. (15.10.)
+- [ ] Endgültiger Titel (aktuell „Paper Development Workshop on Data Studies“), Raum (Raumantrag beim Events Office), hybrid ja oder nein, Kosten
 - [ ] Call-for-Papers-Text mit dem Themenfeld pro Track, Faculty mit Bios und Fotos (nur mit Freigabe), Anreise
-- [ ] Programm: Es ist wie beim CHAIS PDW Bern aufgebaut (Vorlage in `material/`, nicht hochladen). Die genaue Agenda folgt; offen sind:
+- [ ] Programm: Es ist wie beim CHAIS PDW Bern aufgebaut (Vorlage in `material/`, nicht hochladen). Die Uhrzeiten stehen; offen sind:
   - Räume der zwei Tracks
   - Aufteilung der 30 Minuten pro Paper in Präsentation und Feedback
   - Ort des Mittagessens
