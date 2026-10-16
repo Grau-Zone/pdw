@@ -499,7 +499,7 @@
       "kind": "custom",
       "refersTo": "ticker-band",
       "description": "Full-bleed dark green band of light text with mint square separators; moves only with scroll.",
-      "html": "<div class=\"ds-ticker\"><span>Data Platforms and Ecosystems</span><span>Data Governance</span><span>Feedback from senior faculty</span></div>",
+      "html": "<div class=\"ds-ticker\"><span>Data Platforms and Ecosystems</span><span>Data Management and Governance</span><span>Feedback from senior faculty</span></div>",
       "css": ".ds-ticker { display: flex; overflow: hidden; padding: 20px 0; background: #0a5e2d; color: #fff; font-family: 'Source Sans 3', 'Gill Sans', system-ui, sans-serif; } .ds-ticker span { display: inline-flex; align-items: center; gap: 32px; padding-right: 32px; font-size: 30px; font-weight: 300; line-height: 1.2; white-space: nowrap; } .ds-ticker span::after { content: ''; width: 10px; height: 10px; background: #cfe6d6; }"
     }
   ],

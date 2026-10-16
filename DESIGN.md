@@ -285,7 +285,7 @@ Large roles (all 300, fluid):
 - **Figure** (clamp 40px to 64px, 1, tabular): dates in the dates list. The receipt ID runs clamp 40px to 72px at +0.04em; admin stat values 40px.
 - **Headline** (clamp 32px to 56px, 1.1): section heads. Turns 400 below 720px so it holds on small screens.
 - **Statement** (clamp 28px to 54px, 1.2, -0.015em, max 1120px): the large about statement that fills word by word.
-- **Name** (clamp 26px to 40px, 1.15): faculty names; 24px below 720px.
+- **Name** (clamp 26px to 40px, 1.15): faculty names and track names; 24px below 720px.
 - **Claim** (clamp 26px to 36px, 1.2): the footer claim.
 - **Ticker** (clamp 22px to 34px, 1.2): the running band.
 - **Countdown** (clamp 28px to 32px, 1.15, tabular): countdown figures in the tile; 28px below 720px.

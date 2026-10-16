@@ -8,13 +8,13 @@ web
 
 ## Users
 
-Doctoral students in information systems and data studies, from the University of St.Gallen (HSG) and from other universities. They arrive from a call for papers, decide whether the workshop fits their paper, and then submit an extended abstract as a PDF before the deadline. Many will read on a phone first and submit later from a laptop.
+PhD students and postdocs in information systems and data studies, from the University of St.Gallen (HSG) and from other universities. They arrive from a call for papers, decide whether the workshop fits their paper, and then submit an extended abstract as a PDF before the deadline. Many will read on a phone first and submit later from a laptop.
 
 Secondary audiences: senior faculty checking the programme, and the organisers handling the submissions (by e-mail; in form mode in the admin area).
 
 ## Product Purpose
 
-Landing page and paper submission for a one-day paper development workshop (PDW) for doctoral students at HSG, Thursday 3 December 2026, St.Gallen, in two tracks: Data Platforms and Ecosystems (chairs Jan Marco Leimeister, Andreas Hein) and Data Governance (chairs Christine Legner, Aleksi Aaltonen). Submissions are extended abstracts structured with the Emerald template (Purpose, Design/methodology/approach, Findings, Limitations/implications, Practical implications, Originality); deadline 5 November 2026, notification 12 November 2026.
+Landing page and paper submission for a one-day paper development workshop (PDW) for PhD students and postdocs, hosted at HSG and co-organised with CHAIS (the Swiss Chapter of the AIS), Thursday 3 December 2026, St.Gallen, in two tracks: Data Platforms and Ecosystems (chairs Jan Marco Leimeister, Andreas Hein) and Data Management and Governance (chairs Christine Legner, Aleksi Aaltonen). Submissions are extended abstracts structured with the Emerald template (Purpose, Design/methodology/approach, Findings, Limitations/implications, Practical implications, Originality); deadline 5 November 2026, notification 12 November 2026.
 
 Success means enough fitting submissions to fill the paper slots in the two parallel tracks, each submitted correctly and before the deadline, with no lost or duplicated papers.
 

@@ -104,7 +104,8 @@ $contact = $event['contact']['email'];
 <footer class="footer on-deep" data-spot>
     <div class="wrap">
         <div class="grid footer__grid">
-            <p class="footer__claim"><?= e($siteTitle) ?><span><?= e($event['event']['host']) ?></span></p>
+            <?php $co = $event['event']['co_organiser'] ?? []; $coLabel = (string) ($co['short'] ?? ($co['name'] ?? '')); ?>
+            <p class="footer__claim"><?= e($siteTitle) ?><span><?= e($event['event']['host']) ?><?php if ($coLabel !== ''): ?><br>Co-organised with <?= e($coLabel) ?><?php endif; ?></span></p>
             <div class="footer__col">
                 <h2>Contact</h2>
                 <ul>

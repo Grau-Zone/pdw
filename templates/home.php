@@ -16,9 +16,23 @@ $notification = Dates::parse($sub['notification_date'], $app->tz);
 $venue = $event['venue'];
 $faculty = $event['faculty'];
 $about = $event['about'];
-// The running band only repeats facts that are on the page anyway (decorative, hidden from screen readers).
-$tickerItems = ['Data Platforms and Ecosystems', 'Data Governance', 'Feedback from senior faculty', 'Panel with the senior faculty', 'Non-archival', $ev['fee']];
 $tracks = $event['tracks'];
+// "Track 1: Data Platforms and Ecosystems" -> ['Track 1', 'Data Platforms and Ecosystems']
+$trackParts = static fn (array $track): array => array_pad(explode(': ', $track['name'], 2), 2, '');
+$coOrganiser = $ev['co_organiser'] ?? [];
+// The running band repeats facts from further down the page that the hero does not state
+// (decorative, hidden from screen readers). "CHAIS, the Swiss Chapter of the AIS" -> "Co-organised with CHAIS".
+$coShort = (string) ($coOrganiser['short'] ?? ($coOrganiser['name'] ?? ''));
+$tickerItems = array_merge(
+    array_map(static fn (array $track): string => $trackParts($track)[1] ?: $trackParts($track)[0], array_values($tracks)),
+    array_values(array_filter([
+        'Feedback from senior faculty',
+        $coShort !== '' ? 'Co-organised with ' . strtok($coShort, ',') : null,
+        'Panel with the senior faculty',
+        'Non-archival',
+        $ev['fee'],
+    ]))
+);
 ?>
 <section class="hero" aria-labelledby="title" data-hero>
     <canvas class="hero__field" data-field aria-hidden="true"></canvas>
@@ -60,17 +74,45 @@ $tracks = $event['tracks'];
         <?php if ($about !== []): ?>
             <p class="statement" data-fill><?= e($about[0]) ?></p>
         <?php endif; ?>
+        <h3 class="subhead mt-5">Tracks</h3>
+        <dl class="index topics">
+            <?php foreach ($tracks as $track): ?>
+                <?php [$trackNo, $trackTopic] = $trackParts($track); ?>
+                <div>
+                    <dt class="index__key"><?= e($trackNo) ?></dt>
+                    <dd>
+                        <h4 class="topic__name"><?= e($trackTopic !== '' ? $trackTopic : $trackNo) ?></h4>
+                        <p class="topic__chairs small">Chairs: <?= e($track['chair']) ?></p>
+                        <?php if (!empty($track['description'])): ?>
+                            <p class="topic__desc"><?= e($track['description']) ?></p>
+                        <?php endif; ?>
+                    </dd>
+                </div>
+            <?php endforeach; ?>
+        </dl>
         <div class="grid split mt-5">
             <div class="split__main">
                 <?php foreach (array_slice($about, 1) as $paragraph): ?>
                     <p class="lead"><?= e($paragraph) ?></p>
                 <?php endforeach; ?>
-                <h3 class="subhead mt-4">Tracks</h3>
+                <h3 class="subhead mt-4">Organised by</h3>
                 <dl class="index">
-                    <?php foreach ($tracks as $track): ?>
-                        <?php [$trackNo, $trackTopic] = array_pad(explode(': ', $track['name'], 2), 2, ''); ?>
-                        <div><dt class="index__key"><?= e($trackNo) ?></dt><dd><?= e($trackTopic !== '' ? $trackTopic : $trackNo) ?><br><span class="small">Chairs: <?= e($track['chair']) ?></span></dd></div>
-                    <?php endforeach; ?>
+                    <div><dt class="index__key">Host</dt><dd><?= e($ev['host']) ?></dd></div>
+                    <?php if (!empty($coOrganiser['name'])): ?>
+                        <div>
+                            <dt class="index__key">Co-organiser</dt>
+                            <dd>
+                                <?php if (!empty($coOrganiser['logo'])): ?>
+                                    <img class="org-logo" src="<?= e($app->url('/assets/img/' . basename($coOrganiser['logo']))) ?>" alt="" height="48">
+                                <?php endif; ?>
+                                <?php if (!empty($coOrganiser['url'])): ?>
+                                    <a href="<?= e($coOrganiser['url']) ?>" rel="noopener noreferrer"><?= e($coOrganiser['name']) ?><?= icon('external') ?></a>
+                                <?php else: ?>
+                                    <?= e($coOrganiser['name']) ?>
+                                <?php endif; ?>
+                            </dd>
+                        </div>
+                    <?php endif; ?>
                 </dl>
             </div>
             <div class="split__side">

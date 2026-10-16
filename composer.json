@@ -1,6 +1,6 @@
 {
     "name": "hsg/workshop-site",
-    "description": "Landing page and paper submission with deadline gate for a one-day doctoral workshop",
+    "description": "Landing page and paper submission with deadline gate for a one-day paper development workshop",
     "type": "project",
     "license": "proprietary",
     "require": {

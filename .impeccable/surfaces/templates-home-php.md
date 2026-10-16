@@ -9,7 +9,7 @@ related_targets: ["templates/layout.php","templates/partials/submission.php","te
 
 Scope: templates/home.php with layout, partials, and the pages that share them (submit, submitted, privacy, imprint, error, admin). Mode: Persuade (landing) with an Operate block (the form).
 
-Audience and job: doctoral students (HSG and external) decide on a phone whether to submit, then submit one PDF on a laptop before the deadline. Proof: real programme format, real senior faculty, honest TBA placeholders. Constraints: strict CSP, self-hosted fonts, no imagery, WCAG 2.2 AA, IWI colours binding.
+Audience and job: PhD students and postdocs (HSG and external) decide on a phone whether to submit, then submit one PDF on a laptop before the deadline. Proof: real programme format, real senior faculty, honest TBA placeholders. Constraints: strict CSP, self-hosted fonts, no imagery, WCAG 2.2 AA, IWI colours binding.
 
 ## Direction contract
 
@@ -27,4 +27,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Unresolved
 
-Logo use pending formal approval by HSG Communications (the user chose to use the HSG logo now). Final title, CfP text and track scope, extended-abstract format, deadline time (23:59 assumed), rooms, exact agenda.
+Logo use pending formal approval by HSG Communications (the user chose to use the HSG logo now). Final title, deadline time (23:59 assumed), rooms, presenters in the programme, CHAIS logo file (co-organiser shown as text until it arrives).

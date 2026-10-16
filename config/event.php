@@ -21,7 +21,7 @@ return [
     'event' => [
         'title' => 'Paper Development Workshop on Data Studies', // marketed as a one-day PDW (feedback 13 Oct); final wording TBA
         'short_title' => 'HSG Paper Development Workshop 2026',  // used in e-mail subjects and the page header
-        'tagline' => 'A one-day workshop for doctoral students in two tracks: Data Platforms and Ecosystems, and Data Governance.',
+        'tagline' => 'A one-day workshop for PhD students and postdocs in two tracks: Data Platforms and Ecosystems, and Data Management and Governance.', // PhD students and postdocs (16 Oct)
         // Second half of the hero statement, shown in grey after the tagline ('' for none).
         'tagline_more' => 'Each accepted paper receives focused feedback from senior faculty in a small group.',
         'date' => '2026-12-03',                                 // confirmed (feedback 13 Oct)
@@ -30,12 +30,19 @@ return [
         'fee' => 'Free of charge',                              // TBA
         'language' => 'English',
         'host' => 'Chair of Prof. Dr. Jan Marco Leimeister, University of St.Gallen (HSG)', // TBA – exact unit name
+        // Co-organiser (16 Oct), shown under "Organisers" in the About section and in the footer.
+        'co_organiser' => [
+            'name' => 'CHAIS, the Swiss Chapter of the Association for Information Systems (AIS)',
+            'short' => 'CHAIS, the Swiss Chapter of the AIS',
+            'url' => 'https://communities.aisnet.org/swisschapterchais/home',
+            'logo' => '',                                       // optional: file in public/assets/img/ (e.g. chais-logo.svg) once CHAIS sends it
+        ],
     ],
 
     // Short paragraphs for the "About" section. DRAFT wording – replace with the organisers' call for papers.
     'about' => [
-        'This one-day paper development workshop (PDW) gives doctoral students the opportunity to develop a working paper together with experienced faculty and peers. Each accepted paper receives focused, constructive feedback in a small-group setting.',
-        'Submissions are extended abstracts and are assigned to one of two tracks: Data Platforms and Ecosystems, or Data Governance. Each track is chaired by two senior faculty members. [TBA: call for papers text and the thematic scope of each track.]',
+        'This one-day paper development workshop (PDW) gives PhD students and postdocs the opportunity to develop a working paper together with experienced faculty and peers. Each accepted paper receives focused, constructive feedback in a small-group setting.',
+        'Submissions are extended abstracts; each is assigned to one of the two tracks above.',
     ],
 
     'submission' => [
@@ -88,9 +95,20 @@ return [
      * 45-minute lunch. Presenters and rooms are to be announced.
      */
     'programme_note' => 'The presenters and the rooms will be announced. Paper sessions run in two parallel tracks; each paper receives feedback from the track chairs and peers.',
+    // 'description': the agreed track descriptions (16 Oct), shown in the About section.
     'tracks' => [
-        't1' => ['name' => 'Track 1: Data Platforms and Ecosystems', 'room' => 'Room TBA', 'chair' => 'Jan Marco Leimeister, Andreas Hein'], // replaces "Data & Digital Sovereignty" (14 Oct)
-        't2' => ['name' => 'Track 2: Data Governance', 'room' => 'Room TBA', 'chair' => 'Christine Legner, Aleksi Aaltonen'],
+        't1' => [
+            'name' => 'Track 1: Data Platforms and Ecosystems',   // replaces "Data & Digital Sovereignty" (14 Oct)
+            'room' => 'Room TBA',
+            'chair' => 'Jan Marco Leimeister, Andreas Hein',
+            'description' => 'This track looks at how organisations create and capture value from data beyond their own boundaries, through digital platforms, data marketplaces, data spaces and wider data ecosystems. Because whoever orchestrates an ecosystem sets its rules, we welcome work on how ecosystems emerge and are governed, and how participants can share and combine data without losing control to dominant platforms. Synthetic data generation opens new options here: organisations can share synthetic versions of sensitive data instead of the originals, and new services form around producing and trading them.',
+        ],
+        't2' => [
+            'name' => 'Track 2: Data Management and Governance', // broader than "Data Governance" (16 Oct)
+            'room' => 'Room TBA',
+            'chair' => 'Christine Legner, Aleksi Aaltonen',
+            'description' => 'This track looks at how organisations decide about, manage and take responsibility for data. Topics range from data design, ownership, access rights, sharing and data quality to data products and responses to regulation such as the GDPR, the EU Data Act and the AI Act. For instance, synthetic data adds new governance and data management questions: how to judge whether it is fit for purpose, how to track where it came from, how to keep it from revealing the original data, and who is accountable when it is used to train AI systems. Digital sovereignty depends on being able to decide and enforce who uses data, for what purpose and under which conditions. We welcome work on how organisations build this capacity for different types of data, including real and synthetic data, internally and with partners. We also welcome work on data management in and around organisations, as well as on data governance in general.',
+        ],
     ],
     'programme' => [
         ['time' => '10:00', 'end' => '10:30', 'title' => 'Arrival', 'kind' => 'break'],
@@ -148,7 +166,7 @@ return [
         'controller' => 'University of St.Gallen (HSG), [TBA: unit], Dufourstrasse 50, 9000 St.Gallen, Switzerland',
         'dpo_email' => 'datenschutz@unisg.ch',
         'hosting' => '[TBA: hosting provider], data centres in Switzerland',
-        'recipients' => 'The organisers and the four senior faculty: Aleksi Aaltonen (Stevens Institute of Technology, USA), Andreas Hein and Jan Marco Leimeister (University of St.Gallen), Christine Legner (HEC Lausanne). Accepted papers are shared confidentially with the other workshop participants. [TBA: disclosure abroad (USA) and its legal basis, to be reviewed by the data protection office.]',
+        'recipients' => 'The organising team at the University of St.Gallen (HSG) and the four senior faculty: Aleksi Aaltonen (Stevens Institute of Technology, USA), Andreas Hein and Jan Marco Leimeister (University of St.Gallen), Christine Legner (HEC Lausanne). Accepted papers are shared confidentially with the other workshop participants. [TBA: disclosure abroad (USA) and its legal basis, to be reviewed by the data protection office.]',
         'delete_after' => '2027-03-03',                         // TBA – e.g. three months after the event
     ],
 

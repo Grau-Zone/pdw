@@ -199,11 +199,15 @@ Alles hier gehört in `config/event.php` bzw. `config/env.php`. Mit `php bin/che
 **Inhalte**
 
 - [x] Format und Datum: eintägiger Paper Development Workshop am Do 3.12.2026 (Feedback 13.10.2026)
-- [x] Zwei Tracks: Track 1 „Data Platforms and Ecosystems“ (Leimeister, Hein; ersetzt „Data & Digital Sovereignty“, 14.10.), Track 2 „Data Governance“ (Legner, Aaltonen)
+- [x] Zwei Tracks: Track 1 „Data Platforms and Ecosystems“ (Leimeister, Hein; ersetzt „Data & Digital Sovereignty“, 14.10.), Track 2 „Data Management and Governance“ (Legner, Aaltonen; breiter als „Data Governance“, 16.10.)
 - [x] Keine Keynote und keine 1:1-Coachings; Panel (45 Min.) mit allen vier Faculty, moderiert von Andreas Hein; dritter Paper-Block am Nachmittag (14.10.)
 - [x] Uhrzeiten: Beginn 10:00 (Ankunft, Opening 10:30), Apéro ab 17:30, Kaffeepausen 15 Min., Mittag 45 Min. (15.10.)
 - [ ] Endgültiger Titel (aktuell „Paper Development Workshop on Data Studies“), Raum (Raumantrag beim Events Office), hybrid ja oder nein, Kosten
-- [ ] Call-for-Papers-Text mit dem Themenfeld pro Track, Faculty mit Bios und Fotos (nur mit Freigabe), Anreise
+- [x] Track-Beschreibungen (abgestimmt mit der Faculty, 16.10.)
+- [x] Zielgruppe: PhD-Studierende und Postdocs (16.10.)
+- [x] CHAIS als Mitveranstalter (16.10.)
+- [ ] CHAIS-Logo: Datei (SVG oder PNG) von CHAIS als `public/assets/img/chais-logo.svg` ablegen und in `config/event.php` bei `co_organiser.logo` eintragen
+- [ ] Faculty mit Bios und Fotos (nur mit Freigabe), Anreise
 - [ ] Programm: Es ist wie beim CHAIS PDW Bern aufgebaut (Vorlage in `material/`, nicht hochladen). Die Uhrzeiten stehen; offen sind:
   - Räume der zwei Tracks
   - Aufteilung der 30 Minuten pro Paper in Präsentation und Feedback
