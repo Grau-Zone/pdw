@@ -128,7 +128,7 @@ $contact = $event['contact']['email'];
             </div>
         </div>
         <div class="footer__base">
-            <span>Hosted in Switzerland · no cookies, no tracking</span>
+            <span>Hosted in Germany · no cookies, no tracking</span>
             <span>University of St.Gallen (HSG)</span>
         </div>
     </div>

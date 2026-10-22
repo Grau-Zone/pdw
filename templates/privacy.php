@@ -41,7 +41,7 @@ $deleteAfter = Dates::day(Dates::parse($p['delete_after'], $app->tz));
         <p>If you agree separately<?= $app->submissionsByEmail() ? ' (in your e-mail)' : '' ?>, your name, affiliation and paper title are listed in the public programme. Without this consent nothing about you is published.</p>
 
         <h2>Hosting and technical data</h2>
-        <p>The website is hosted by <?= e($p['hosting']) ?>. It uses no cookies for visitors, no analytics and no third-party services (fonts are served from this site; no external scripts or captchas). The web server keeps standard access logs for security purposes [TBA: retention period of the hosting provider].</p>
+        <p>The website is hosted by <?= e($p['hosting']) ?>. It uses no cookies for visitors, no analytics and no third-party services (fonts are served from this site; no external scripts or captchas). The web server keeps no access logs, so visitors' IP addresses are not stored; only critical server errors are logged.</p>
         <?php if (!$app->submissionsByEmail()): ?>
             <p>To prevent abuse, the number of submissions per network address is limited; addresses are stored only as a keyed hash and deleted after 24 hours.</p>
         <?php endif; ?>

@@ -165,7 +165,7 @@ return [
         'version' => '2026-10-draft',                           // stored with every submission's consents
         'controller' => 'University of St.Gallen (HSG), [TBA: unit], Dufourstrasse 50, 9000 St.Gallen, Switzerland',
         'dpo_email' => 'datenschutz@unisg.ch',
-        'hosting' => '[TBA: hosting provider], data centres in Switzerland',
+        'hosting' => 'STACKIT (Schwarz Digits Cloud GmbH & Co. KG), data centres in Germany',
         'recipients' => 'The organising team at the University of St.Gallen (HSG) and the four senior faculty: Aleksi Aaltonen (Stevens Institute of Technology, USA), Andreas Hein and Jan Marco Leimeister (University of St.Gallen), Christine Legner (HEC Lausanne). Accepted papers are shared confidentially with the other workshop participants. [TBA: disclosure abroad (USA) and its legal basis, to be reviewed by the data protection office.]',
         'delete_after' => '2027-03-03',                         // TBA – e.g. three months after the event
     ],

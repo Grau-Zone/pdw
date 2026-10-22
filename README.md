@@ -1,6 +1,10 @@
 # Workshop-Website (Paper Development Workshop HSG, 3.12.2026)
 
-Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Alles läuft auf einem Schweizer Shared Hosting (z. B. Infomaniak). Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
+Landing Page plus Paper-Einreichung mit serverseitigem Deadline-Gate. Sie ist bewusst klein gehalten: statisches Layout, ein schlankes PHP-Backend, SQLite und PHPMailer. Es gibt keine Cookies für Besucher, kein Tracking, keine CDNs und keine externen Fonts oder Captchas.
+
+**Live:** https://hsg.iwi-website.stackit.gg, demnächst https://hsg.iwi.unisg.ch (der CNAME ist bei der HSG-Informatik beantragt).
+- Läuft als statische Fassung auf STACKIT (Rechenzentrum Deutschland). Die Einreichung erfolgt per E-Mail.
+- Der Webserver schreibt keine Zugriffsprotokolle.
 
 **Design:** Die Farben kommen von der Institutsseite [iwi.unisg.ch](https://iwi.unisg.ch/). Gesetzt ist alles mit der Disziplin von anduril.com und palantir.com: eine Schrift, Grösse statt Effekte, Haarlinien statt Karten, Farbe nur als grosse Fläche. Das ist die Vorgabe des Lehrstuhls vom 12.10.2026; den früheren Radar-Look ersetzt sie.
 
@@ -59,15 +63,11 @@ php bin/export-preview.php
 
 Das Skript erzeugt `export/workshop-vorschau.zip`, etwa 400 KB. Entpacken und `index.html` doppelklicken. Das Formular ist in der Vorschau ausgeschaltet. Nach jeder Änderung einfach neu erzeugen.
 
-**Online-Vorschau:** https://sovereignty-radar.iwi.unisg.ch/pdw/ (GitHub Pages, Branch `gh-pages`; das Grau-Zone-Konto leitet github.io auf diese Domain um)
-- Nur statisch, das Formular ist aus. Die Seite liegt auf US-Servern, enthält aber keine Daten, nur Entwurfsinhalte.
-- Aktualisieren: Vorschau mit Adresse erzeugen, dann den Inhalt von `export/vorschau/` als neuen Commit auf `gh-pages` pushen.
+**Live-Seite auf STACKIT:**
+- Veröffentlichen mit `bash stackit/deploy.sh`. Das Skript erzeugt den statischen Export für die Live-Adresse und lädt ihn auf den Server.
+- Skript, Zugangsdaten und Server-Details liegen nur lokal in `stackit/`; der Ordner steht in `.gitignore`. Die Anleitung dazu ist `stackit/HANDOVER_STACKIT.md`.
 
-  ```bash
-  php bin/export-preview.php https://sovereignty-radar.iwi.unisg.ch/pdw/
-  ```
-
-- Die echte Seite mit Formular kommt auf Schweizer PHP-Hosting, siehe Deployment.
+**GitHub Pages (`gh-pages`) ist stillgelegt.** Die alte Vorschau unter `sovereignty-radar.iwi.unisg.ch/pdw/` leitet nur noch auf die Live-Seite weiter. Dort bitte keinen Export mehr hinpushen, sonst gibt es wieder zwei Fassungen.
 
 ## Aufbau
 
@@ -133,6 +133,8 @@ tests/               Einzeltests + End-to-End-Test
 - **Arbeitsregel:** Keine echten Einreichungen oder Teilnehmerdaten in Claude oder andere KI-Dienste geben. Zum Testen nur erfundene Daten verwenden.
 
 ## Deployment (Infomaniak Web Hosting)
+
+> Gilt nur, falls die volle PHP-App mit Upload-Formular später auf PHP-Hosting soll. Die aktuelle statische Seite läuft auf STACKIT, siehe oben.
 
 1. Das Konto gehört der HSG bzw. dem Lehrstuhl, der Entwickler bekommt nur Admin-Zugang. Domain bestellen, PHP 8.4 einstellen.
 2. **Den Document Root der Site auf `public/` setzen.** Falls das nicht geht, schützt die `.htaccess` im Hauptordner alle anderen Ordner.
