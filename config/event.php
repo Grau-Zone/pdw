@@ -99,13 +99,13 @@ return [
     'tracks' => [
         't1' => [
             'name' => 'Track 1: Data Platforms and Ecosystems',   // replaces "Data & Digital Sovereignty" (14 Oct)
-            'room' => 'Room TBA',
+            'room' => 'Room C 83-1235',                           // assignment decided 27 Oct
             'chair' => 'Jan Marco Leimeister, Andreas Hein',
             'description' => 'This track looks at how organisations create and capture value from data beyond their own boundaries, through digital platforms, data marketplaces, data spaces and wider data ecosystems. Because whoever orchestrates an ecosystem sets its rules, we welcome work on how ecosystems emerge and are governed, and how participants can share and combine data without losing control to dominant platforms. Synthetic data generation opens new options here: organisations can share synthetic versions of sensitive data instead of the originals, and new services form around producing and trading them.',
         ],
         't2' => [
             'name' => 'Track 2: Data Management and Governance', // broader than "Data Governance" (16 Oct)
-            'room' => 'Room TBA',
+            'room' => 'Room C 83-3235',                           // assignment decided 27 Oct
             'chair' => 'Christine Legner, Aleksi Aaltonen',
             'description' => 'This track looks at how organisations decide about, manage and take responsibility for data. Topics range from data design, ownership, access rights, sharing and data quality to data products and responses to regulation such as the GDPR, the EU Data Act and the AI Act. For instance, synthetic data adds new governance and data management questions: how to judge whether it is fit for purpose, how to track where it came from, how to keep it from revealing the original data, and who is accountable when it is used to train AI systems. Digital sovereignty depends on being able to decide and enforce who uses data, for what purpose and under which conditions. We welcome work on how organisations build this capacity for different types of data, including real and synthetic data, internally and with partners. We also welcome work on data management in and around organisations, as well as on data governance in general.',
         ],
@@ -145,11 +145,11 @@ return [
     ],
 
     'venue' => [
-        'name' => 'University of St.Gallen (HSG)',
-        'room' => 'Room TBA',                                   // after the HSG event request is approved
-        'address' => 'TBA, 9000 St.Gallen, Switzerland',
-        'map_url' => '',                                        // e.g. an OpenStreetMap link
-        'travel' => 'St.Gallen is about one hour by train from Zurich Airport. [TBA: directions to the building.]',
+        'name' => 'University of St.Gallen (HSG), Haus Washington',
+        'room' => 'Rooms C 83-1235 and C 83-3235',              // booked by the HSG Events Office, 23 Oct (EVB0002339)
+        'address' => 'Rosenbergstrasse 20–22, 9000 St.Gallen, Switzerland',
+        'map_url' => 'https://www.openstreetmap.org/search?query=Rosenbergstrasse%2020%2C%209000%20St.%20Gallen',
+        'travel' => 'Haus Washington is directly opposite St.Gallen main railway station, about one hour by train from Zurich Airport.',
     ],
 
     'contact' => [
