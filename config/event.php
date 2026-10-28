@@ -163,7 +163,7 @@ return [
         // While false, the live site (draft = false) does not accept submissions.
         'approved' => false,
         'version' => '2026-10-draft',                           // stored with every submission's consents
-        'controller' => 'University of St.Gallen (HSG), [TBA: unit], Dufourstrasse 50, 9000 St.Gallen, Switzerland',
+        'controller' => 'University of St.Gallen (HSG), Institute of Information Systems and Digital Business (IWI-HSG), Dufourstrasse 50, 9000 St.Gallen, Switzerland',
         'dpo_email' => 'datenschutz@unisg.ch',
         'hosting' => 'STACKIT (Schwarz Digits Cloud GmbH & Co. KG), data centres in Germany',
         'recipients' => 'The organising team at the University of St.Gallen (HSG) and the four senior faculty: Aleksi Aaltonen (Stevens Institute of Technology, USA), Andreas Hein and Jan Marco Leimeister (University of St.Gallen), Christine Legner (HEC Lausanne). Accepted papers are shared confidentially with the other workshop participants. [TBA: disclosure abroad (USA) and its legal basis, to be reviewed by the data protection office.]',
@@ -171,9 +171,9 @@ return [
     ],
 
     'imprint' => [
-        'publisher' => 'University of St.Gallen (HSG), [TBA: unit]',
+        'publisher' => 'University of St.Gallen (HSG), Institute of Information Systems and Digital Business (IWI-HSG)',
         'address' => 'Dufourstrasse 50, 9000 St.Gallen, Switzerland',
         'responsible' => 'Prof. Dr. Jan Marco Leimeister',      // TBA
-        'email' => 'workshop@example.org',                      // TBA
+        'email' => 'adrian.bohrer@unisg.ch',                    // confirmed 28 Oct
     ],
 ];
